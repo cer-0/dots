@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+# Simple bar for dwm.
+
+# Dependencies: networkmanager alsa-utils siji-font playerctl
+
+while true;
+do
+	# General variables
+	sts=$(cat /sys/class/power_supply/BAT0/status)
+	cap=$(cat /sys/class/power_supply/BAT0/capacity)
+	von="$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | cut -d "%" -f 1)"
+	ipa=$(for i in `ip r`; do echo $i; done | grep -A 1 src | tail -1)
+	wif=$(nmcli device | awk '{if ($2 == "wifi") {print $4}}')
+	cps=$(ps -C cmus,spotify > /dev/null && playerctl metadata --format '{{artist}} · {{title}}')
+
+	# Time
+	tim=`date +"$(echo -e '\ue0a3')%H:%M"`
+	# Battery 
+	if [ $sts == "Discharging" ]; then
+		if [ $cap -lt 10 ]; then
+			bat="$(echo -e '\ue20f')$cap   "
+		else
+			bat="$(echo -e '\ue107')$cap   "
+		fi
+	elif [ $sts == "Charging" ]; then
+		bat="$(echo -e '\ue239')$cap   "
+	else
+		bat=" $(echo -e '\ue23a')   "
+	fi
+	# Volume
+	vol="$(echo -e '\ue05d')$von   "
+	# Network
+	if [ "$wif" == "--" ]; then
+		if [ -z $ipa ]; then
+			net=''
+		else
+			net="$(echo -e '\ue0af')$ipa   "
+		fi
+	else
+		net="$(echo -e '\ue1af')$wif   "
+	fi
+	# Music
+	if [ -z $cps ]; then
+		mus=''
+	else
+		mus="$(echo -e '\ue1a6')$cps   "
+	fi
+	# Status
+	xsetroot -name "$mus$net$vol$bat$tim"
+	sleep 10s # Arbitrary timer
+done &

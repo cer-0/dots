@@ -1,0 +1,29 @@
+#! /bin/sh
+#
+# script for running lemonbar
+#
+# credits: https://github.com/turquoise-hexagon/dots
+
+NAME=panel
+
+. ~/.config/lemonbar/config
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+for lemon in ~/.config/lemonbar/lemonade/*; do
+	"$lemon" &
+done |
+	while read -r event; do
+		export "${event%% *}=${event#* }"
+		eval "printf '%s\n' \"$format\""
+	done |
+		lemonbar	\
+		-f "$icons"	\
+		-f "$font"	\
+		-B "$BG"	\
+		-F "$FG"	\
+		-n "$NAME" &
+
+xdo lower -ma "$NAME"
+
+wait

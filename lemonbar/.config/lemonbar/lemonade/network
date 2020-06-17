@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# script for exporting ssid and ip to lemonbar.
+
+while true; do
+	ipa=$(for i in `ip r`; do echo $i; done | grep -A 1 src | tail -1)
+	ssid=$(nmcli device | awk '{if ($2 == "wifi") {print $4}}')
+
+	if [ "$ssid" == "--" ]; then
+		[ -z "$ipa" ] && net='' || net=" $ipa"
+	else
+		net=" $ssid"
+	fi
+
+	printf "%s\n" "ntw $net"
+
+	sleep 3
+done

@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# rofi/dmenu script for taking screenshots with maim.
+
+# Dependencies: maim rofi|dmenu xclip xdotool
+
+# TODO: Fix notification when selection is cancelled.
+
+set -e
+
+# Variables
+ssdir="$HOME/Pictures/sshots"
+cam_icon='\ue1e7'
+clock_icon='\ue018'
+options='Clip\nFull\nWindow\nManual\nTimer'
+timers='5\n10\n30\n60'
+
+# Check maim and create directory
+which maim || exit 1
+[ -d $ssdir ] || mkdir -p $ssdir
+
+# Call the selection options
+selection=$(echo -e $options | rofi -show -dmenu -l 5 -i -p "$(echo -e $cam_icon)")
+
+case  $selection in
+	Clip)
+		maim -u -s | xclip -selection clipboard -t image/png \
+			&& notify-send "Maim" "Screenshot copied to clipboard!"
+		;;
+	Full)
+		sleep 1 && maim -u -m 7 $ssdir/$(date +%s)-f.png
+		notify-send "Maim" "Screenshot saved!"
+		;;
+	Window)
+		maim -u -i $(xdotool getactivewindow) $ssdir/$(date +%s)-w.png
+		notify-send "Maim" "Window screenshot saved!"
+		;;
+	Manual)
+		maim -s -u -m 7 $ssdir/$(date +%s)-s.png
+		notify-send "Maim" "Screenshot saved!"
+		;;
+	Timer)
+		# Set timer and take full screenshot
+		delay=$(echo -e $timers | rofi -show -dmenu -l 5 -i -p "$(echo -e $clock_icon)")
+		sleep $delay && maim -u $ssdir/$(date +%s)-f.png
+		notify-send "Maim" "Screenshot taken!"
+		;;
+esac

@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# script for exporting volume to lemonbar.
+#
+# dependencies: alsa-utils
+
+while true
+do
+	sts=$(amixer get Master | tail -1 | awk '{print $NF}')
+
+	case $sts in
+		'[on]') von=" $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | cut -d "%" -f 1)" ;;
+		'[off]') von=" muted" ;;
+	esac
+
+	printf "%s\n" "vol $von"
+
+	sleep 3
+done

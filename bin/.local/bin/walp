@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# This just changes the wallpaper, nothing interesting here.
+
+# Dependencies: feh
+
+WALLDIR=${1:-"$HOME/Pictures/wp/"}
+
+feh --no-fehbg --randomize --recursive --bg-fill $WALLDIR

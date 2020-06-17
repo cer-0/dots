@@ -1,0 +1,46 @@
+/* based on slate: https://github.com/davatorium/rofi-themes/blob/master/User%20Themes/slate.rasi */
+
+* {
+  background-color: #161821;
+  border-color: #1e2132;
+  text-color: #c6c8d1;
+  spacing: 0;
+  width: 510px;
+  font: "Cozette 10";
+}
+
+inputbar {
+  border: 0 0 1px 0;
+  children: [prompt,entry];
+}
+
+prompt {
+  padding: 10px;
+  border: 0 1px 0 0;
+}
+
+textbox {
+  background-color: #161821;
+  border: 0 0 1px 0;
+  border-color: #161821;
+  padding: 8px 10px;
+}
+
+entry {
+  padding: 10px;
+}
+
+listview {
+  cycle: false;
+  margin: 0 0 -1px 0;
+  scrollbar: false;
+}
+
+element {
+  border: 0 0 1px 0;
+  padding: 10px;
+}
+
+element selected {
+  background-color: #444b71;
+}

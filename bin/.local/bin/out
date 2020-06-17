@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# Shutdown, reboot, hibernate or suspend your device.
+
+# Dependencies: dmenu|rofi systemd
+# Kevin came up with this idea, not me, I just "coded" it.
+
+function selectn () {
+	case $action in
+		Shutdown)
+			sleep $1
+			shutdown now
+			;;
+		Reboot)
+			sleep $1
+			reboot
+			;;
+		Suspend)
+			sleep $1
+			systemctl suspend -i
+			;;
+		Hibernate)
+			sleep $1
+			systemctl hibernate
+			;;
+		Logout)
+			sleep $1
+			pkill dwm
+			;;
+	esac
+}
+
+action=$(echo -e "Shutdown\nReboot\nSuspend\nHibernate\nTimer\nLogout" | rofi -show -dmenu -i -l 6 -p ":(")
+
+if [ "$action" != "Timer" ]; then
+	selectn 0
+else
+	timer=$(echo -e "1\n10\n60" | rofi -show -dmenu -l 3 -i -p "Minutes:")
+	action=$(echo -e "Shutdown\nReboot\nSuspend\nHibernate" | rofi -show -dmenu -l 4 -i)
+	timer+="m"
+	selectn $timer
+fi

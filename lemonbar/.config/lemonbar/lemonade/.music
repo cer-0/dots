@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# script for exporting current song and artist playing in mpd to lemonbar.
+#
+# dependencies: mpd mpc
+
+while true
+do
+	mpd | {
+		read -r inf
+		read -r sts
+
+		case "$sts" in
+			'[playing]') var=" $inf";;
+			'[paused]')  var=" $inf";;
+			*) ;;
+		esac
+
+		printf "%s\n" "mus $var"
+	}
+	
+	mpc idle player
+done

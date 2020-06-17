@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#
+# dmenu script for controling xrandr.
+#
+# Dependencies: dmenu, feh
+
+# TODO: improve speed
+#     : find how to set extend to right when on external only
+
+primary=$(xrandr | grep -w connected | awk '{print $1}' | sed '1q;d')
+eprimar=$(xrandr | grep -w connected | awk '{print $1}' | sed '2q;d')
+
+built_in=${primary:-"LVDS-1"}
+external=${eprimar:-"HDMI-2"}
+
+if [ $(xrandr | grep -w connected | wc -l) -eq 1 ]; then
+	xrandr --output $built_in --auto --output $external --off \
+		&& walp && exit 0
+fi
+
+layoutChoice=$(printf "%s\n%s\n%s" "Builtin" "External"\
+	"Extend to right" | dmenu -l 3 -i -p "$(echo -e '\ue1d7')")
+
+case $layoutChoice in
+	"1"|"Builtin")
+		xrandr --output $primary --auto --output $eprimar --off
+		walp; kbd
+		;;
+	"2"|"External")
+		xrandr --output $primary --off --output $eprimar --auto
+		walp; kbd
+		;;
+	"3"|"Extend to right")
+		xrandr --output $eprimar --auto --right-of $primary --auto
+		# xrandr --output $eprimar --auto --left-of $primary --auto
+		walp; kbd
+		;;
+esac

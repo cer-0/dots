@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# script for exporting time to lemonbar.
+
+while true
+do
+	v=$(date +'%H:%M')
+	printf "%s\n" "clk  $v"
+	sleep 10
+done

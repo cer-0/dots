@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# export date to lemobar script
+
+while true; do
+	v=$(date +'%d %b')
+	printf "%s\n" "dat  $v"
+	sleep 60
+done
