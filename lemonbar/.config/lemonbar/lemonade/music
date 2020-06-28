@@ -2,17 +2,19 @@
 #
 # script for exporting current song and artist playing in mpd to lemonbar.
 #
-# dependencies: mpd mpc
+# dependencies: mpc
+#
+# credits: https://github.com/turquoise-hexagon/dots
 
 while true
 do
-	mpd | {
+	mpc | {
 		read -r inf
 		read -r sts
 
 		case "$sts" in
-			'[playing]') var=" $inf";;
-			'[paused]')  var=" $inf";;
+			*playing*) var=" $inf";;
+			*paused*)  var=" $inf";;
 			*) ;;
 		esac
 
