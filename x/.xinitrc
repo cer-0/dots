@@ -2,7 +2,9 @@
 
 # Turn bell off
 xset -b
-# Bar script it's launched from bspwmrc
+# (running sxhkd from here this makes gid different from the one in bspwmrc
+# so when i kill panel and the panel sends kill 0 sig sxhkd doesn't die).
+pgrep -x sxhkd > /dev/null || sxhkd &
 # Reload Xresources
 [ -f ~/.Xresources ] && xrdb -merge -I$HOME ~/.Xresources
 # Start the compositor (no screen tearing)
