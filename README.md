@@ -5,13 +5,13 @@ Managed with GNU `stow`.
 For symlinking some programs to the `~` directory just run:
 
 ```
-$ stow -t ~/ vim tmux bash
+$ stow -t ~ vim tmux bash
 ```
 
 For removing:
 
 ```
-$ stow -t ~/ -D vim tmux bash
+$ stow -t ~ -D vim tmux bash
 ```
 
 ---
@@ -39,7 +39,7 @@ software:
 
 - image viewer: `feh`
 
-- compositor: `picom` (fork of compton)
+- compositor: `picom` (fork of `compton`)
 
 - browser: `firefox`
 
