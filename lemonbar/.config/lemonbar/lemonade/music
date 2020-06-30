@@ -14,8 +14,8 @@ do
 
 		case "$sts" in
 			*playing*) var=" $inf";;
-			*paused*)  var=" $inf";;
-			*) ;;
+			*paused*)  var=" $inf";;
+			*) var='';;
 		esac
 
 		printf "%s\n" "mus $var"
