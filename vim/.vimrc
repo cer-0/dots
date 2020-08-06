@@ -13,6 +13,10 @@
  Plug 'morhetz/gruvbox'
  Plug 'arcticicestudio/nord-vim'
  Plug 'cocopon/iceberg.vim'
+ " Scheme stuff
+ Plug 'Olical/vim-scheme', { 'for': 'scheme', 'on': 'SchemeConnect' }
+ Plug 'guns/vim-sexp'
+ Plug 'tpope/vim-sexp-mappings-for-regular-people'
  call plug#end()
 
  " General
@@ -35,7 +39,7 @@
  colorscheme iceberg
 
  " Global
- let mapleader =" "
+ let mapleader = " "
 
  " Maps
  map <C-h> <C-w>h
@@ -49,7 +53,6 @@
  map <Leader>oe :setlocal spell spelllang=es_mx<CR>
  map <Leader>ou :setlocal spell spelllang=en_us<CR>
  map <Leader>oo :set nospell<CR>
- " map <Leader><F2> :!cc -Wall -g % -o %< && ./%< <CR>
  map <Leader><F2> :!x %<CR>
  map <Leader>he :%!xxd<CR>
  map <Leader>hr :%!xxd -r<CR>
@@ -66,7 +69,6 @@
  vnoremap <Leader>mc c```<CR>```<Esc>P
 
  " Plugins
-
  " Python-Mode
  let g:pymode_python = 'python3'
 
