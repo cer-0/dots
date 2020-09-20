@@ -1,4 +1,4 @@
-PATH=$HOME/.local/bin:$PATH
+PATH=$HOME/.local/bin:$(ruby -e 'puts Gem.user_dir')/bin:$PATH
 
 export                    \
 PS1='\W > '               \
