@@ -2,7 +2,9 @@
 ncmpcpp_directory = "~/.config/ncmpcpp"
 mpd_host = localhost
 mpd_port = 6600
-mpd_music_dir = "~/Music"
+mpd_music_dir = "~/mus"
+lyrics_directory = "~/mus/.lyrics"
+show_hidden_files_in_local_browser = no
 execute_on_song_change = dunstify -r 404 -i "/usr/share/icons/Adwaita/scalable/emblems/emblem-music-symbolic.svg" "$(mpc current -f %title%)" "$(mpc current -f '%artist% - %album%')"
 
 # appearance
