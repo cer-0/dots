@@ -4,6 +4,6 @@
 
 # Dependencies: feh
 
-WALLDIR=${1:-"$HOME/Pictures/wp/"}
+WALLDIR=${1:-"$HOME/pic/wp/"}
 
 feh --no-fehbg --randomize --recursive --bg-fill $WALLDIR

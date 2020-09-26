@@ -9,7 +9,7 @@
 set -e
 
 # Variables
-ssdir="$HOME/Pictures/sshots"
+ssdir="$HOME/pic/sshots"
 cam_icon='\ue1e7'
 clock_icon='\ue018'
 options='Clip\nFull\nWindow\nManual\nTimer'
