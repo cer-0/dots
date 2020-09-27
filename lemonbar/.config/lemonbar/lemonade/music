@@ -13,8 +13,10 @@ do
 		read -r sts
 
 		case "$sts" in
-			*playing*) var=" $inf";;
-			*paused*)  var=" $inf";;
+			*playing*)
+				[ ${#inf} -gt 60 ] &&
+					inf=$(printf '%.60s...' "$inf")
+				var=" $inf";;
 			*) var='';;
 		esac
 
