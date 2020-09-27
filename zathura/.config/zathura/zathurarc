@@ -1,3 +1,8 @@
+# General
+
+set font "Cozette 10"
+set statusbar-home-tilde true
+
 # Base16 Iceberg
 
 set default-bg                  "#1e2132"
@@ -8,6 +13,11 @@ set statusbar-bg                "#161821"
 
 set inputbar-bg                 "#161821"
 set inputbar-fg                 "#89b8c2"
+
+set index-bg			"#1e2132"
+set index-fg			"#c6c8d1"
+set index-active-bg		"#84a0c6"
+set index-active-fg		"#1e2132"
 
 set notification-bg             "#b4be82"
 set notification-fg             "#161821"
