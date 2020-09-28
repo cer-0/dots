@@ -18,7 +18,7 @@ super + Escape
 #################
 # quit/restart bspwm
 super + shift + {q,r}
-	bspc {pkill -TERM panel; quit,wm -r}
+	pkill -TERM panel; bspc {quit,wm -r}
 
 # close and kill
 super + {_,shift + }q
