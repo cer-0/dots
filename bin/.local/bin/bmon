@@ -8,11 +8,11 @@
 #       some loc and make it clearer.
 
 # To speed things up, pre-define variables.
-BM='LVDS-1' # Builtin Monitor.
-EM='HDMI-2' # External Monitor.
+BM='LVDS1' # Builtin Monitor.
+EM='HDMI2' # External Monitor.
 # This should be read from 'bspwmrc' instead of defining it here, or
 # 'bswmrc' should export this variable.
-DESK_NAMES='I II III IV V VI'
+DESK_NAMES='0x0 0xA 0xB 0xC 0xD 0xE'
 # Status of the laptop lid.
 read -p LID_STATE < '/proc/acpi/button/lid/LID/state'
 
