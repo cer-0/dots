@@ -37,4 +37,3 @@ bspc rule -a "TelegramDesktop" desktop='^5' state=floating
 bspc rule -a "feh" state=pseudo_tiled
 
 pgrep -x panel > /dev/null || panel &
-pgrep -x sxhkd > /dev/null || sxhkd &
