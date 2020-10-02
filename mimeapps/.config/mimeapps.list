@@ -1,8 +1,8 @@
 [Default Applications]
 text/plain=vim.desktop;
 application/pdf=org.pwmt.zathura.desktop;
-image/png=sxiv.desktop;
-image/jpeg=sxiv.desktop;
+image/png=feh.desktop;
+image/jpeg=feh.desktop;
 image/gif=sxiv.desktop;
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
