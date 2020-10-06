@@ -36,7 +36,7 @@ $ stow -t ~ -D vim tmux bash
 - image viewer: `feh`
 - compositor: `picom` (fork of `compton`)
 - browser: `firefox`
-- fonts: [dina](https://www.dcmembers.com/jibsen/download/61) and [cozette](https://github.com/slavfox/Cozette)
+- fonts: [dina](https://www.dcmembers.com/jibsen/download/61) [cozette](https://github.com/slavfox/Cozette) and [siji](https://github.com/stark/siji) as icons
 - colorscheme: [iceberg](https://github.com/cocopon/iceberg.vim)
 - gtk theme: adwaita
 - gtk icons: [boston](https://github.com/heychrisd/Boston-Icons)
