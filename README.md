@@ -49,3 +49,6 @@ $ stow -t ~ -D vim tmux bash
 
 ![3](./.img/3.png)
 `rofi`.
+
+![4](./.img/4.png)
+`slock`.
