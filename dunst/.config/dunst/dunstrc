@@ -28,7 +28,7 @@
     show_indicators = yes
     icon_position = left
     max_icon_size = 32
-    icon_path = /usr/share/icons/Arc/panel/16:/usr/share/icons/Arc/status/16:/usr/share/icons/Arc/actions/16:/usr/share/icons/Arc/devices/16:/usr/share/icons/Papirus/16x16/apps:/usr/share/icons/Adwaita/16x16/devices/
+    icon_path =/usr/share/icons/Adwaita/16x16/devices/
     sticky_history = yes
     history_length = 10
     dmenu = /usr/bin/dmenu -p dunst:
