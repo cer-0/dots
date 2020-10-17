@@ -11,12 +11,10 @@
  Plug 'airblade/vim-rooter'
  Plug 'altercation/vim-colors-solarized'
  Plug 'morhetz/gruvbox'
- Plug 'arcticicestudio/nord-vim'
  Plug 'cocopon/iceberg.vim'
- " Scheme stuff
- Plug 'Olical/vim-scheme', { 'for': 'scheme', 'on': 'SchemeConnect' }
- Plug 'guns/vim-sexp'
- Plug 'tpope/vim-sexp-mappings-for-regular-people'
+ " lisp stuff
+ Plug 'kovisoft/slimv'
+ Plug 'junegunn/rainbow_parentheses.vim'
  call plug#end()
 
  " General
@@ -31,6 +29,7 @@
  " Color scheme
  " let g:gruvbox_termcolors=16
  set background=dark
+ " This way colors don't get weird
  if exists('+termguicolors')
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -84,3 +83,10 @@
 
  " NerdTree
  map <Leader><F3> :NERDTreeToggle<CR>
+
+ " rainbow parenthesis
+ map <Leader>rp :RainbowParentheses!!<CR>
+ augroup rainbow_lisp
+	 autocmd!
+	 autocmd FileType lisp,scheme RainbowParentheses
+ augroup END
