@@ -84,6 +84,9 @@
  " NerdTree
  map <Leader><F3> :NERDTreeToggle<CR>
 
+ " slimv
+ let g:slimv_repl_split = 2
+
  " rainbow parenthesis
  map <Leader>rp :RainbowParentheses!!<CR>
  augroup rainbow_lisp
