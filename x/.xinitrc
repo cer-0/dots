@@ -16,6 +16,6 @@ setxkbmap -model pc105 -layout us,latam -option "grp:alt_caps_toggle"
 # thunar --daemon &
 # (running sxhkd from here this makes gid different from the one in bspwmrc
 # so when i kill panel and the panel sends kill 0 sig sxhkd won't die).
--pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x sxhkd > /dev/null || sxhkd &
 # Run wm
 exec bspwm

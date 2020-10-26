@@ -12,16 +12,16 @@ scrolling:
   history: 10000
 font:
   normal:
-    family: Dina
+    family: Terminus
     style: Regular
   bold:
-    family: Dina
+    family: Terminus
     style: Bold
   italic:
-    family: Dina
+    family: Terminus
     style: Italic
   bold_italic:
-    family: Dina
+    family: Terminus
     style: Bold Italic
   size: 8.0
 colors:
