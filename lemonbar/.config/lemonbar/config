@@ -1,8 +1,8 @@
 BG='#161821'
 FG='#c6c8d1'
 
-font='Cozette-8'
-icons='Siji-9'
+font='Terminus-8'
+icons='Siji-8'
 
 format='\
 $wks  $mus\
