@@ -14,6 +14,9 @@
  Plug 'cocopon/iceberg.vim'
  " lisp stuff
  Plug 'kovisoft/slimv'
+ Plug 'Olical/vim-scheme', { 'for': 'scheme', 'on': 'SchemeConnect' }
+ Plug 'guns/vim-sexp'
+ Plug 'tpope/vim-sexp-mappings-for-regular-people'
  Plug 'junegunn/rainbow_parentheses.vim'
  call plug#end()
 
