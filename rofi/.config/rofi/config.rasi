@@ -1,11 +1,11 @@
 /* based on slate: https://github.com/davatorium/rofi-themes/blob/master/User%20Themes/slate.rasi */
 
 * {
-  background-color: #161821;
-  border-color: #1e2132;
+  background-color: #1e2132;
+  border-color: #161821;
   text-color: #c6c8d1;
   spacing: 0;
-  width: 510px;
+  width: 400px;
   font: "Cozette 10";
 }
 
