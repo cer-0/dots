@@ -1,23 +1,24 @@
  " Vim-Plug
  call plug#begin()
- Plug 'python-mode/python-mode', { 'branch': 'develop' }
- Plug 'rust-lang/rust.vim'
+ " general stuff
  Plug 'itchyny/lightline.vim'
  Plug 'tpope/vim-commentary'
- Plug 'tpope/vim-fugitive'
  Plug 'junegunn/goyo.vim'
  Plug 'preservim/nerdtree'
  Plug 'Yggdroot/indentLine'
  Plug 'airblade/vim-rooter'
- Plug 'altercation/vim-colors-solarized'
+ " color schemes
  Plug 'morhetz/gruvbox'
  Plug 'cocopon/iceberg.vim'
- " lisp stuff
+ " programming languages
+ Plug 'python-mode/python-mode', { 'branch': 'develop' }
+ Plug 'rust-lang/rust.vim'
+ " clisp and scheme
+ Plug 'junegunn/rainbow_parentheses.vim'
  Plug 'kovisoft/slimv'
  Plug 'Olical/vim-scheme', { 'for': 'scheme', 'on': 'SchemeConnect' }
  Plug 'guns/vim-sexp'
  Plug 'tpope/vim-sexp-mappings-for-regular-people'
- Plug 'junegunn/rainbow_parentheses.vim'
  call plug#end()
 
  " General
@@ -32,7 +33,7 @@
  " Color scheme
  " let g:gruvbox_termcolors=16
  set background=dark
- " This way colors don't get weird
+ " This way colors don't get weird inside tmux
  if exists('+termguicolors')
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
