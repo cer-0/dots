@@ -9,6 +9,10 @@ super + c
 super + e
 	rofi -show run
 
+# switch windows
+alt + Tab
+	rofi -show window
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
