@@ -16,7 +16,7 @@ fi
 
 xsetroot -cursor_name left_ptr
 
-bspc config border_width         3
+bspc config border_width         7
 bspc config window_gap           7
 bspc config top_padding          15
 
@@ -37,3 +37,4 @@ bspc rule -a "TelegramDesktop" desktop='^5' state=floating
 bspc rule -a "feh" state=pseudo_tiled
 
 pgrep -x panel > /dev/null || panel &
+dborders &
