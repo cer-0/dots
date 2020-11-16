@@ -1,8 +1,6 @@
 # terminal
 super + c
 	alacritty
-super + Return
-	st
 
 # run programs
 super + e
