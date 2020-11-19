@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# do not disturb script for dunst
+
+FILE="$HOME/.cache/dunst_status"
+
+create_ddnds_file() { touch "$FILE" ; }
+
+[ ! -e "$FILE" ] && create_ddnds_file
+
+read -r dunst_dnd_status < "$FILE"
+
+if [ "$dunst_dnd_status" -eq "2" ]; then
+	killall -SIGUSR1 dunst && echo '1' > "$FILE" # pause dunst
+else
+	killall -SIGUSR2 dunst && echo '2' > "$FILE" # resume dunst
+fi
