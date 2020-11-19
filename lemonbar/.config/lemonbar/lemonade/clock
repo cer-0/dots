@@ -1,10 +1,19 @@
 #!/bin/sh
 #
 # script for exporting time to lemonbar.
+FILE="$HOME/.cache/dunst_status"
 
 while true
 do
 	v=$(date +'%H:%M')
-	printf "%s\n" "clk  $v"
-	sleep 10
+
+	read -r d < "$FILE"
+
+	if [ "$d" == "1" ]; then
+		printf "%s\n" "clk  $v "
+	else
+		printf "%s\n" "clk  $v"
+	fi
+
+	sleep 5
 done
