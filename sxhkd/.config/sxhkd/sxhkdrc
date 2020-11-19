@@ -76,17 +76,28 @@ super + space; {w,b,e,q,l,p,n,m}
 # volume
 XF86Audio{RaiseVolume,LowerVolume,Mute}
 	amixer set Master {2+,2-,toggle}
+
 super + alt + {Up,Down,m}
 	amixer set Master {2+,2-,toggle}
 
 # media
 XF86Audio{Play,Next,Prev,Stop}
-	mpc {toggle,next,prev,stop} # can replace 'mpc' for 'playerctl -a'
+	mpc {toggle,next,prev,stop} # you can replace 'mpc' for 'playerctl -a'
+
 super + alt + {space,Right,Left,o}
 	mpc {toggle,next,prev,stop}
+
+# run screenshot script
 Print
 	mshot
+
 XF86ScreenSaver
 	slock
+
+# run bmon script
 XF86Display
 	bmon
+
+# toggle dunst's do not disturb mode
+super + F4
+	tdnd
