@@ -7,10 +7,9 @@ lyrics_directory = "~/.cache/ncmpcpp/lyrics"
 execute_on_song_change = dunstify -r 404 -i "/usr/share/icons/Adwaita/scalable/emblems/emblem-music-symbolic.svg" "$(mpc current -f %title%)" "$(mpc current -f '%artist% - %album%')"
 
 # appearance
-visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_data_source = /tmp/mpd.fifo
 visualizer_output_name = fifo
 visualizer_in_stereo = yes
-visualizer_sync_interval = 30
 visualizer_type = spectrum
 visualizer_look = ██
 song_list_format = {$5%a$9 $8-$9 $3%t$9}|{$8%f$9}$R{$6%l$9}
