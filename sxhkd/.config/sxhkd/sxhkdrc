@@ -74,15 +74,16 @@ super + space; {w,b,e,q,l,p,n,m}
 	{firefox,walp,alacritty -e nnn,out,slock,passmenu,alacritty -e ncmpcpp,bmon}
 
 # volume
-XF86Audio{RaiseVolume,LowerVolume,Mute}
-	amixer set Master {2+,2-,toggle}
+XF86Audio{RaiseVolume,LowerVolume}
+	pactl set-sink-volume 0 {+5%,-5%}
+	# amixer set Master {2+,2-,toggle}
 
-super + alt + {Up,Down,m}
-	amixer set Master {2+,2-,toggle}
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
 
 # media
 XF86Audio{Play,Next,Prev,Stop}
-	mpc {toggle,next,prev,stop} # you can replace 'mpc' for 'playerctl -a'
+	mpc {toggle,next,prev,stop} # can replace 'mpc' for 'playerctl -a'
 
 super + alt + {space,Right,Left,o}
 	mpc {toggle,next,prev,stop}
