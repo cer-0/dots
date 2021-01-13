@@ -5,7 +5,7 @@
   border-color: #161821;
   text-color: #c6c8d1;
   spacing: 0;
-  width: 400px;
+  width: 300px;
   font: "scientifica 8";
 }
 
