@@ -1,8 +1,4 @@
-st.alpha: 1
-st.termname: st-256color
-st.font: Fantasque Sans Mono-10;
-
-rofi.lines: 10
+rofi.lines: 8
 
 Xft.autohint:   0
 Xft.lcdfilter:  lcddefault
