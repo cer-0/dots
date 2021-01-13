@@ -75,7 +75,7 @@ super + space; {w,b,e,q,l,p,n,m}
 
 # volume
 XF86Audio{RaiseVolume,LowerVolume}
-	pactl set-sink-volume 0 {+5%,-5%}
+	pactl set-sink-volume 0 {+2%,-2%}
 	# amixer set Master {2+,2-,toggle}
 
 XF86AudioMute
