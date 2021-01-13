@@ -35,7 +35,7 @@ action=$(echo -e "Shutdown\nReboot\nSuspend\nHibernate\nTimer\nLogout" | rofi -s
 if [ "$action" != "Timer" ]; then
 	selectn 0
 else
-	timer=$(echo -e "1\n10\n60" | rofi -show -dmenu -l 3 -i -p "Minutes:")
+	timer=$(echo -e "5\n15\n30\n60" | rofi -show -dmenu -l 4 -i -p "Minutes:")
 	action=$(echo -e "Shutdown\nReboot\nSuspend\nHibernate" | rofi -show -dmenu -l 4 -i)
 	timer+="m"
 	selectn $timer
