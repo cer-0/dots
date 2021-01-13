@@ -6,7 +6,7 @@
   text-color: #c6c8d1;
   spacing: 0;
   width: 400px;
-  font: "Cozette 10";
+  font: "scientifica 8";
 }
 
 inputbar {

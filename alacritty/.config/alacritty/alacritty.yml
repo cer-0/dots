@@ -5,23 +5,23 @@ window:
    columns: 80
    lines: 24
   padding:
-    x: 2
-    y: 2
+    x: 5
+    y: 5
   startup_mode: Windowed
 scrolling:
   history: 10000
 font:
   normal:
-    family: Terminus
+    family: scientifica
     style: Regular
   bold:
-    family: Terminus
+    family: scientifica
     style: Bold
   italic:
-    family: Terminus
+    family: scientifica
     style: Italic
   bold_italic:
-    family: Terminus
+    family: scientifica
     style: Bold Italic
   size: 8.0
 colors:
@@ -56,5 +56,5 @@ key_bindings:
   - { key: Y,        mods: Control|Shift, action: PasteSelection   }
   - { key: C,        mods: Control|Shift, action: Copy             }
   - { key: Key0,     mods: Control,       action: ResetFontSize    }
-  - { key: Plus,      mods: Control,       action: IncreaseFontSize }
+  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
