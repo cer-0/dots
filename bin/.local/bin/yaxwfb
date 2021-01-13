@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+
+# Casos de uso:
+# 1 Hay dos monitores conectados y solo uno en uso
+#   - Monitor interno en uso y externo apagado
+#     a Usar externo unicamente
+#     b Usar en modo extendido (mitad de escritorios en un monitor y mitad en otro)
+#   - Monitor externo en uso e interno apagado
+#     c Usar externo unicamente
+# 2 Hay dos monitores conectados y ninguno en uso
+#   d Laptop con la tapa cerrada (en modo dock)
+# No es necesario rofi en los casos 1 y 2
+
+builtin_monitor='LVDS1' # Builtin Monitor.
+external_monitor='HDMI1' # External Monitor.
+desktop_names='0x0 0xA 0xB 0xC 0xD 0xE'
+read -r lid_state < '/proc/acpi/button/lid/LID/state'
+
+restart_panel() {
+	pkill -QUIT panel
+	panel &
+}
+
+send_desktops_to_monitor() {
+	local target_desktops=$1
+	local target_monitor=$2
+	# For each of 'target_desktops' send it to 'target_monitor' monitor.
+	for i in $target_desktops; do
+		bspc desktop $i --to-monitor "$target_monitor"
+	done
+}
+
+check_deps() {
+	type rofi > /dev/null 2>&1 || exit 1
+}
+
+mon_count=$(xrandr | grep -wc 'connected')
+
+# If bspwm started in docked mode (that is, only the external monitor is used)
+# and now that external monitor is disconnected send all the desktops back
+# to the builtin monitor.
+if [ "$mon_count" -eq "1" ] && [ "$(bspc query -M --names | wc -l)" == "2" ]
+then
+	# Turn off external monitor and on builtin monitor.
+	xrandr --output "$builtin_monitor" --auto --output "$external_monitor" --off
+	# bspwm doesn't allow to have monitors with zero desktops, so,
+	# add dummy desktop to external monitor, so when moving 'desktop_names'
+	# back the external monitor has at least dummy desktop.
+	bspc monitor "$external_monitor" -a Desktop
+	send_desktops_to_monitor "$desktop_names" "$builtin_monitor"
+	# Remove the external monitor of bspwm.
+	bspc monitor "$external_monitor" -r
+	# Remove dummy desktop of builtin monitor (this was created
+	# automatically by bspwm when turning on builtin monitor with xrandr).
+	bspc desktop Desktop -r
+	# Reorder desktops on builtin monitor.
+	bspc monitor "$builtin_monitor" -o "$desktop_names"
+	# Reset wallpaper, keyboard layouts and exit with no errors.
+	walp; kbd; restart_panel; exit 0
+# If the script it's called when builtin monitor it's detected
+# by bspwm and the laptop lid is closed, then, use the external monitor.
+elif [ "${lid_state#state:}" == "closed" ] && [ "$(bspc query -M --names)" == "$builtin_monitor" ]; then
+	xrandr --output "$builtin_monitor" --off --output "$external_monitor" --auto
+	bspc monitor "$builtin_monitor" -a Desktop
+	send_desktops_to_monitor "$desktop_names" "$external_monitor"
+	bspc monitor "$builtin_monitor" -r; bspc desktop Desktop -r
+	bspc monitor "$external_monitor" -o "$desktop_names"
+	walp; kbd; exit 0;
+elif [ "$mon_count" -eq "2" ] && [ "$(bspc query -M --names)" == "$builtin_monitor" ]; then
+	selection=$(printf "%s\n%s\n%s" "External" \
+		"Extend to right" | rofi -show -dmenu -i -l 3 -p "Monitor")
+	case $selection in
+		"External"|"1")
+			xrandr --output "$builtin_monitor" --off --output "$external_monitor" --auto
+			bspc monitor "$builtin_monitor" -a Desktop
+			send_desktops_to_monitor "$desktop_names" "$external_monitor"
+			bspc monitor "$builtin_monitor" -r; bspc desktop Desktop -r
+			bspc monitor "$external_monitor" -o "$desktop_names"
+			walp; kbd; restart_panel; exit 0;
+			;;
+		"Extend to right"|"2")
+			check_deps
+			xrandr --output "$external_monitor" --auto --right-of "$builtin_monitor" --auto
+			# Pass the last three desktops of 'desktop_names'.
+			send_desktops_to_monitor "${desktop_names##0*B}" "${external_monitor}"
+			bspc desktop Desktop -r
+			walp; kbd; restart_panel; exit 0;
+			;;
+		*)
+			notify-send "${0}: Error" "Invalid option"
+			exit 1
+			;;
+	esac
+fi

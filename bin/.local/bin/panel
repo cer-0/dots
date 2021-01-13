@@ -20,8 +20,10 @@ done |
 		eval "printf '%s\n' \"$format\""
 	done |
 		lemonbar	\
+		-g "x$height"	\
 		-f "$icons"	\
 		-f "$font"	\
+		-f "$ffont"	\
 		-B "$BG"	\
 		-F "$FG"	\
 		-n "$NAME" &

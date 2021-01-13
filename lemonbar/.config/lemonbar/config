@@ -1,7 +1,10 @@
+height=16
+
 BG='#161821'
 FG='#c6c8d1'
 
-font='Terminus-8'
+font='scientifica-8'
+ffont='lemon-8'
 icons='Siji-8'
 
 format='\
