@@ -30,22 +30,22 @@ $ stow -t ~ -D vim tmux bash
 - notifications: `dunst`
 - file manager: `nnn` (and `thunar` sometimes)
 - editor: `vim`
-- music player: `ncmpcpp` (as a frontend for `mpd`)
+- music player: `ncmpcpp` (`mpd` client)
 - multiplexer: `tmux`
 - reader: `zathura`
 - image viewer: `feh`
 - compositor: `picom` (fork of `compton`)
 - browser: `firefox`
-- fonts: [terminus](https://sourceforge.net/projects/terminus-font/) [cozette](https://github.com/slavfox/Cozette) and [siji](https://github.com/stark/siji) as icons
+- fonts: [scientifica](https://github.com/NerdyPepper/scientifica) [lemon](https://github.com/cmvnd/fonts) and [siji](https://github.com/stark/siji) as icons
 - colorscheme: [iceberg](https://github.com/cocopon/iceberg.vim)
 - gtk theme: adwaita
-- gtk icons: [boston](https://github.com/heychrisd/Boston-Icons)
+- gtk icons: [boston](https://github.com/heychrisd/Boston-Icons) and [papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - screen locker: my fork of [`slock`](https://github.com/cer-0/suckless/tree/iceberg/slock)
 
 ##### more screenshots:
 
 ![2](./.img/2.png)
-`vim`, `chicken-csi` and `zathura` showing The Litttle Schemer.
+trying to solve day 4 of [aoc](adventofcode.com). `tmux`, `vim` and `firefox`.
 
 ![3](./.img/3.png)
 `rofi`.
