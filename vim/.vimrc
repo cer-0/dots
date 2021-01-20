@@ -22,13 +22,14 @@
  call plug#end()
 
  " General
- set number relativenumber
  syntax on
+ set number relativenumber
  set nocompatible
- filetype plugin on
  set wildmenu
+ set colorcolumn=80
  set splitbelow splitright
- set hlsearch
+ set nohlsearch incsearch
+ filetype plugin on
 
  " Color scheme
  " let g:gruvbox_termcolors=16
