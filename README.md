@@ -36,11 +36,40 @@ $ stow -t ~ -D vim tmux bash
 - image viewer: `feh`
 - compositor: `picom` (fork of `compton`)
 - browser: `firefox`
-- fonts: [scientifica](https://github.com/NerdyPepper/scientifica) [lemon](https://github.com/cmvnd/fonts) and [siji](https://github.com/stark/siji) as icons
+- fonts: [scientifica](https://github.com/NerdyPepper/scientifica), [lemon](https://github.com/cmvnd/fonts) and [siji](https://github.com/stark/siji) as icons
 - colorscheme: [iceberg](https://github.com/cocopon/iceberg.vim)
 - gtk theme: adwaita
 - gtk icons: [boston](https://github.com/heychrisd/Boston-Icons) and [papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - screen locker: my fork of [`slock`](https://github.com/cer-0/suckless/tree/iceberg/slock)
+
+##### dependencies:
+
+Names of the packages (for Arch Linux):
+
+```
+# wm
+bspwm sxhkd alacritty rofi dunst picom
+# cli
+vim git tmux
+# media
+nnn ncmpcpp mpd mpc mpv feh zathura zathura-pdf-mupdf
+# audio
+alsa-utils pulseaudio pulsemixer
+# fonts
+noto-fonts-emoji noto-fonts-cjk terminus-font
+# bin
+main xclip xdotool tree qrencode iw
+# opt
+firefox irssi telegram-desktop thunar
+```
+
+##### (AUR) dependencies:
+
+I always forget these, and they're kinda critical
+
+```
+lemonbar-xft wmutils scientifica siji boston xdo xtitle libwm?
+```
 
 ##### more screenshots:
 
