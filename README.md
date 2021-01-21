@@ -47,20 +47,22 @@ $ stow -t ~ -D vim tmux bash
 Names of the packages (for Arch Linux):
 
 ```
+# sys
+xorg xorg-xinit iwd
 # wm
-bspwm sxhkd alacritty rofi dunst picom
+bspwm sxhkd alacritty rofi dunst picom xdo
 # cli
-vim git tmux
-# media
-nnn ncmpcpp mpd mpc mpv feh zathura zathura-pdf-mupdf
+vim git tmux stow
+# bin
+main xclip xdotool tree qrencode
 # audio
 alsa-utils pulseaudio pulsemixer
+# media
+nnn ncmpcpp mpd mpc mpv feh zathura zathura-pdf-mupdf
 # fonts
 noto-fonts-emoji noto-fonts-cjk terminus-font
-# bin
-main xclip xdotool tree qrencode iw
 # opt
-firefox irssi telegram-desktop thunar
+firefox irssi telegram-desktop pass thunar papirus-icon-theme
 ```
 
 ##### (AUR) dependencies:
@@ -68,7 +70,7 @@ firefox irssi telegram-desktop thunar
 I always forget these, and they're kinda critical
 
 ```
-lemonbar-xft wmutils scientifica siji boston xdo xtitle libwm?
+lemonbar-xft wmutils xtitle scientifica siji boston 
 ```
 
 ##### more screenshots:
