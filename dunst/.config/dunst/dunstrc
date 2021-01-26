@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "300x5-15+30"
+    geometry = "300x5-20-20"
     indicate_hidden = yes
     shrink = no
     transparency = 0
@@ -16,7 +16,7 @@
     idle_threshold = 120
     font = scientifica 8
     line_height = 2
-    # corner_radius = 10
+    corner_radius = 10
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
