@@ -22,14 +22,14 @@ $ stow -t ~ -D vim tmux bash
 
 ##### stuff i use
 
-- distribution: [arch](https://archlinux.org)
+- distribution: [Arch Linux](https://archlinux.org)
 - window manager: `bspwm`
 - terminal: `alacritty`
 - launcher: `rofi`
 - panel/bar: [`lemonbar-xft`](https://github.com/krypt-n/bar)
 - notifications: `dunst`
 - file manager: `nnn` (and `thunar` sometimes)
-- editor: `vim`
+- editor: `neovim`
 - music player: `ncmpcpp` (`mpd` client)
 - multiplexer: `tmux`
 - reader: `zathura`
@@ -44,34 +44,7 @@ $ stow -t ~ -D vim tmux bash
 
 ##### dependencies:
 
-Names of the packages (for Arch Linux):
-
-```
-# sys
-xorg xorg-xinit iwd
-# wm
-bspwm sxhkd alacritty rofi dunst picom xdo
-# cli
-vim git tmux stow
-# bin
-main xclip xdotool tree qrencode
-# audio
-alsa-utils pulseaudio pulsemixer
-# media
-nnn ncmpcpp mpd mpc mpv feh zathura zathura-pdf-mupdf
-# fonts
-noto-fonts-emoji noto-fonts-cjk terminus-font
-# opt
-firefox irssi telegram-desktop pass thunar papirus-icon-theme
-```
-
-##### (AUR) dependencies:
-
-I always forget these, and they're kinda critical
-
-```
-lemonbar-xft wmutils xtitle scientifica siji boston 
-```
+Check the [dependencies wiki][Dependencies] page.
 
 ##### more screenshots:
 
