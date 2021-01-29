@@ -44,7 +44,7 @@ $ stow -t ~ -D vim tmux bash
 
 ##### dependencies:
 
-Check the [dependencies wiki][Dependencies] page.
+Check the [dependencies wiki][Dependencies-wiki] page.
 
 ##### more screenshots:
 
