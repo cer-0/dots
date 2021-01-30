@@ -8,13 +8,19 @@
 #       some loc and make it clearer.
 
 # To speed things up, pre-define variables.
-BM='LVDS1' # Builtin Monitor.
-EM='HDMI2' # External Monitor.
+BM='LVDS-1' # Builtin Monitor.
+EM='HDMI-2' # External Monitor.
 # This should be read from 'bspwmrc' instead of defining it here, or
 # 'bswmrc' should export this variable.
 DESK_NAMES='0x0 0xA 0xB 0xC 0xD 0xE'
 # Status of the laptop lid.
 read -p LID_STATE < '/proc/acpi/button/lid/LID/state'
+
+# Reset double borders function
+rst_dbord() {
+	pkill -QUIT dborders
+	dborders &
+}
 
 # Reset panel function
 rst_pan() {
@@ -48,7 +54,7 @@ then
 	# Reorder desktops on builtin monitor.
 	bspc monitor "$BM" -o "$DESK_NAMES"
 	# Reset wallpaper, keyboard layouts and exit with no errors.
-	walp; kbd; rst_pan; exit 0
+	walp; kbd; rst_pan; rst_dbord; exit 0
 # If the script it's called when builtin monitor it's detected
 # by bspwm and the laptop lid is closed, then, use the external monitor.
 # elif [ "$LID_STATE" == "closed" ] && [ "$(bspc query -M --names)" == "$BM" ]; then
@@ -92,7 +98,7 @@ case $selection in
 		bspc monitor "$EM" -r
 		bspc monitor "$BM" -o "$DESK_NAMES"
 		bspc desktop Desktop -r
-		walp; kbd; rst_pan; exit 0
+		walp; kbd; rst_pan; rst_dbord; exit 0
 		;;
 	"External"|"2")
 		xrandr --output "$BM" --off --output "$EM" --auto
@@ -102,7 +108,7 @@ case $selection in
 		done
 		bspc monitor "$BM" -r; bspc desktop Desktop -r
 		bspc monitor "$EM" -o "$DESK_NAMES"
-		walp; kbd; rst_pan; exit 0;
+		walp; kbd; rst_pan; rst_dbord; exit 0;
 		;;
 	"Extend to right"|"3")
 		xrandr --output "$EM" --auto --right-of "$BM" --auto
@@ -112,7 +118,7 @@ case $selection in
 			bspc desktop "$i" --to-monitor "$EM"
 		done
 		bspc desktop Desktop -r
-		walp; kbd; rst_pan; exit 0;
+		walp; kbd; rst_pan; rst_dbord; exit 0;
 		;;
 	# If no match in 'selection' exit with error status.
 	*) exit 1 ;;
