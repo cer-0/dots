@@ -28,7 +28,6 @@ call plug#end()
 " session
 set noswapfile
 set hidden
-set backup
 
 " buffer split
 set splitright
@@ -73,6 +72,7 @@ let mapleader=" "
 nnoremap <leader>s :update<cr>
 nnoremap <leader>w :update<cr>
 nnoremap <Leader>q :q<cr>
+nnoremap <Leader>Q :qa<cr>
 
 " move between buffers
 nnoremap <C-h> <C-w>h
