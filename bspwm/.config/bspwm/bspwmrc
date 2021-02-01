@@ -1,7 +1,7 @@
 #!/bin/sh
 
-E='HDMI2'
-I='LVDS1'
+E='HDMI-2'
+I='LVDS-1'
 DN='0x0 0xA 0xB 0xC 0xD 0xE'
 
 if [ $(bspc query -M | wc -l) -eq 2 ]; then
