@@ -24,9 +24,9 @@ done |
 		-f "$icons"	\
 		-f "$font"	\
 		-f "$ffont"	\
+		-n "$NAME"	\
 		-B "$BG"	\
-		-F "$FG"	\
-		-n "$NAME" &
+		-F "$FG"	&
 
 xdo lower -ma "$NAME"
 
