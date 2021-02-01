@@ -1,100 +1,140 @@
- " Vim-Plug
- call plug#begin()
- " general stuff
- Plug 'itchyny/lightline.vim'
- Plug 'tpope/vim-commentary'
- Plug 'junegunn/goyo.vim'
- Plug 'preservim/nerdtree'
- Plug 'Yggdroot/indentLine'
- Plug 'airblade/vim-rooter'
- " color schemes
- Plug 'morhetz/gruvbox'
- Plug 'cocopon/iceberg.vim'
- " programming languages
- Plug 'python-mode/python-mode', { 'branch': 'develop' }
- Plug 'rust-lang/rust.vim'
- " clisp and scheme
- Plug 'junegunn/rainbow_parentheses.vim'
- Plug 'kovisoft/slimv'
- Plug 'Olical/vim-scheme', { 'for': 'scheme', 'on': 'SchemeConnect' }
- Plug 'guns/vim-sexp'
- Plug 'tpope/vim-sexp-mappings-for-regular-people'
- call plug#end()
+" plugins
+call plug#begin()
 
- " General
- syntax on
- set number relativenumber
- set nocompatible
- set wildmenu
- set colorcolumn=80
- set splitbelow splitright
- set nohlsearch incsearch
- filetype plugin on
+" git
+Plug 'tpope/vim-fugitive'
 
- " Color scheme
- " let g:gruvbox_termcolors=16
- set background=dark
- " This way colors don't get weird inside tmux
- if exists('+termguicolors')
-	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-	set termguicolors
- endif
- colorscheme iceberg
+" comments
+Plug 'tpope/vim-commentary'
 
- " Global
- let mapleader = " "
+" set root directory
+Plug 'airblade/vim-rooter'
 
- " Maps
- map <C-h> <C-w>h
- map <C-j> <C-w>j
- map <C-k> <C-w>k
- map <C-l> <C-w>l
- map <Leader>ev :e $MYVIMRC<CR>
- map <Leader>sv :source $MYVIMRC<CR>
- map <Leader>vs :vsp<CR>
- map <Leader>sp :sp<CR>
- map <Leader>oe :setlocal spell spelllang=es_mx<CR>
- map <Leader>ou :setlocal spell spelllang=en_us<CR>
- map <Leader>oo :set nospell<CR>
- map <Leader><F2> :!x %<CR>
- map <Leader>he :%!xxd<CR>
- map <Leader>hr :%!xxd -r<CR>
- map <Leader><F12> :term<CR>
- " Normal Maps
- nnoremap <Left> diWBPa <Esc>Elx2B
- nnoremap <Right> diWEa <Esc>p2BX2E
- nnoremap <Up> ddkP
- nnoremap <Down> ddjP
- " Visual Maps
- vnoremap <Leader>mi c**<Esc>Pe
- vnoremap <Leader>mb c****<Esc>hPe
- vnoremap <Leader>my c``<Esc>Pe
- vnoremap <Leader>mc c```<CR>```<Esc>P
+" rust
+Plug 'rust-lang/rust.vim'
 
- " Plugins
- " Python-Mode
- let g:pymode_python = 'python3'
+" lisps
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'kovisoft/slimv'
 
- " Goyo
- map <leader>F :Goyo<CR>
- let g:goyo_height = 40
+" interface
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'preservim/nerdtree'
+Plug 'Yggdroot/indentLine'
 
- " Lightline
- set laststatus=2
- let g:lightline = {
-	\ 'colorscheme': 'iceberg',
-	\ }
+" color schemes
+Plug 'cocopon/iceberg.vim'
 
- " NerdTree
- map <Leader><F3> :NERDTreeToggle<CR>
+call plug#end()
 
- " slimv
- let g:slimv_repl_split = 2
+" global config
+" session
+set nocompatible
+set noswapfile
+set hidden
 
- " rainbow parenthesis
- map <Leader>rp :RainbowParentheses!!<CR>
- augroup rainbow_lisp
-	 autocmd!
-	 autocmd FileType lisp,scheme RainbowParentheses
- augroup END
+" filetype detection
+filetype plugin on
+
+" indent
+set smartindent
+
+" buffer split
+set splitbelow
+set splitright
+
+" search
+set nohlsearch
+set incsearch
+
+" interface
+syntax on
+set wildmenu
+set number
+set relativenumber
+set colorcolumn=80
+set scrolloff=3
+
+" colors
+set background=dark
+if exists('+termguicolors')
+       let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+       let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+       set termguicolors
+endif
+colorscheme iceberg
+
+" leader
+let mapleader = " "
+
+" maps
+" save and quit
+nnoremap <leader>s :update<cr>
+nnoremap <leader>w :update<cr>
+nnoremap <Leader>q :q<cr>
+nnoremap <Leader>Q :qa<cr>
+
+" move between buffers
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" move lines
+nnoremap <silent> <Up>   :move-2<cr>
+nnoremap <silent> <Down> :move+<cr>
+
+" movement in insert mode
+inoremap <C-h> <C-o>h
+inoremap <C-l> <C-o>a
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
+
+" move between tabs
+nnoremap ]t :tabn<cr>
+nnoremap [t :tabp<cr>
+
+" vimrc
+map <Leader>ev :e $MYVIMRC<CR>
+map <Leader>sv :source $MYVIMRC<CR>
+
+" create buffers
+map <Leader>vs :vsp<CR>
+map <Leader>hs :sp<CR>
+
+" spellchecking
+map <Leader>oe :setlocal spell spelllang=es_mx<CR>
+map <Leader>ou :setlocal spell spelllang=en_us<CR>
+map <Leader>oo :set nospell<CR>
+
+" toggle hex view
+map <Leader>he :%!xxd<CR>
+map <Leader>hr :%!xxd -r<CR>
+
+" invoke a terminal
+map <Leader><F12> :terminal<CR>
+
+" plugins
+
+" goyo
+map <leader>F :Goyo<CR>
+let g:goyo_height = 40
+
+" lightline
+set laststatus=2
+let g:lightline = { 'colorscheme': 'iceberg' }
+
+" nerdtree
+nnoremap <Leader>t :NERDTreeToggle<CR>
+nnoremap <C-t> :NERDTreeFind<CR>
+
+" slimv
+let g:slimv_repl_split = 2
+
+" rainbow parenthesis
+map <Leader>rp :RainbowParentheses!!<CR>
+augroup rainbow_lisp
+        autocmd!
+        autocmd FileType lisp,scheme RainbowParentheses
+augroup END
