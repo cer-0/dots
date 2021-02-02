@@ -115,8 +115,7 @@ map <Leader>hr :%!xxd -r<CR>
 " invoke a terminal
 map <Leader><F12> :terminal<CR>
 
-" plugins
-
+" plugins configuration
 " goyo
 map <leader>F :Goyo<CR>
 let g:goyo_height = 40
