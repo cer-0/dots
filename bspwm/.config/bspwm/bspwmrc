@@ -36,6 +36,7 @@ bspc rule -a "firefox" desktop='^2'
 bspc rule -a "TelegramDesktop" desktop='^5' state=floating
 bspc rule -a "feh" state=pseudo_tiled
 bspc rule -a "Zathura" state=pseudo_tiled
+bspc rule -a "Emacs" state=pseudo_tiled
 
 pgrep -x panel > /dev/null || panel &
 dborders &
