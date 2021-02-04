@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# toggle between two fonts in alacritty.
+
+ALACRITTYRC="$HOME/.config/alacritty/alacritty.yml"
+FONT1="scientifica"
+FONT2="terminus"
+
+change_font () {
+	oldfont="$1" # not positional parameters but instead funciton
+	newfont="$2" # arguments
+	sed -i -e "s/${oldfont}/${newfont}/g" "$ALACRITTYRC"
+}
+
+font=$(awk '{if ($1 == "family:") {print $2; exit}}' "$ALACRITTYRC")
+
+if [ "$font" == "$FONT1" ]; then
+	change_font "$FONT1" "$FONT2"
+else
+	change_font "$FONT2" "$FONT1"
+fi
