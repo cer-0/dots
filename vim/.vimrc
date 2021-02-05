@@ -54,7 +54,7 @@ set wildmenu
 set number
 set relativenumber
 set colorcolumn=80
-set scrolloff=3
+set scrolloff=1
 
 " colors
 set background=dark
@@ -130,6 +130,7 @@ nnoremap <C-t> :NERDTreeFind<CR>
 
 " slimv
 let g:slimv_repl_split = 2
+let g:paredit_electrical_return = 0
 
 " rainbow parenthesis
 map <Leader>rp :RainbowParentheses!!<CR>
