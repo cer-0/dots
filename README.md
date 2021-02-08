@@ -29,7 +29,7 @@ $ stow -t ~ -D vim tmux bash
 - panel/bar: [`lemonbar-xft`](https://github.com/krypt-n/bar)
 - notifications: `dunst`
 - file manager: `nnn` (and `thunar` sometimes)
-- editor: `neovim`
+- editor: `vim`
 - music player: `ncmpcpp` (`mpd` client)
 - multiplexer: `tmux`
 - reader: `zathura`
@@ -40,7 +40,7 @@ $ stow -t ~ -D vim tmux bash
 - colorscheme: [iceberg](https://github.com/cocopon/iceberg.vim)
 - gtk theme: adwaita
 - gtk icons: [boston](https://github.com/heychrisd/Boston-Icons) and [papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-- screen locker: my fork of [`slock`](https://github.com/cer-0/suckless/tree/iceberg/slock)
+- screen locker: a fork of [`slock`](https://github.com/cer-0/suckless/tree/iceberg/slock)
 
 ##### dependencies:
 
