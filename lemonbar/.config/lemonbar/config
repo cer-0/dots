@@ -1,7 +1,7 @@
 height=16
 
-BG='#2D2A2E'
-FG='#FCFCFA'
+BG='#282c34'
+FG='#abb2bf'
 
 font='scientifica-8'
 ffont='lemon-8'

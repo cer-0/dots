@@ -12,46 +12,40 @@ scrolling:
   history: 10000
 font:
   normal:
-    family: terminus
+    family: scientifica
     style: Regular
   bold:
-    family: terminus
+    family: scientifica
     style: Bold
   italic:
-    family: terminus
+    family: scientifica
     style: Italic
   bold_italic:
-    family: terminus
+    family: scientifica
     style: Bold Italic
   size: 8.0
-# Colors (Monokai Pro)
+
+# Colors (One Dark)
 colors:
-  # Default colors
   primary:
-    background: '#2D2A2E'
-    foreground: '#FCFCFA'
-
-  # Normal colors
+    background: '#282c34'
+    foreground: '#abb2bf'
+  cursor:
+    text:       CellBackground
+    cursor:     '#528bff' # syntax-cursor-color
+  selection:
+    text:       CellForeground
+    background: '#3e4451' # syntax-selection-color
   normal:
-    black:   '#403E41'
-    red:     '#FF6188'
-    green:   '#A9DC76'
-    yellow:  '#FFD866'
-    blue:    '#FC9867'
-    magenta: '#AB9DF2'
-    cyan:    '#78DCE8'
-    white:   '#FCFCFA'
+    black:      '#5c6370' # mono-3
+    red:        '#e06c75' # red 1
+    green:      '#98c379'
+    yellow:     '#e5c07b' # orange 2
+    blue:       '#61afef'
+    magenta:    '#c678dd'
+    cyan:       '#56b6c2'
+    white:      '#828997' # mono-2
 
-  # Bright colors
-  bright:
-    black:   '#727072'
-    red:     '#FF6188'
-    green:   '#A9DC76'
-    yellow:  '#FFD866'
-    blue:    '#FC9867'
-    magenta: '#AB9DF2'
-    cyan:    '#78DCE8'
-    white:   '#FCFCFA'
 cursor:
   style: Block
 live_config_reload: true

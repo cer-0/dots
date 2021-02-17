@@ -27,8 +27,7 @@ Plug 'preservim/nerdtree'
 Plug 'Yggdroot/indentLine'
 
 " color schemes
-Plug 'cocopon/iceberg.vim'
-Plug 'phanviet/vim-monokai-pro'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -67,7 +66,8 @@ if exists('+termguicolors')
        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
        set termguicolors
 endif
-colorscheme monokai_pro
+colorscheme onedark
+let g:onedark_terminal_italics=1
 
 " leader
 let mapleader = " "
@@ -126,7 +126,7 @@ let g:goyo_height = 40
 
 " lightline
 set laststatus=2
-let g:lightline = { 'colorscheme': 'monokai_pro' }
+let g:lightline = { 'colorscheme': 'onedark' }
 
 " nerdtree
 nnoremap <Leader>t :NERDTreeToggle<CR>

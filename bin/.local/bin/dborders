@@ -4,9 +4,9 @@
 #
 # credits: https://github.com/6gk/polka
 
-outer='0x2D2A2E'   # outer
-inner1='0xA9DC76'  # focused
-inner2='0x727072'  # normal
+outer='0x282c34'   # outer
+inner1='0x98c379'  # focused
+inner2='0x5c6370'  # normal
 
 targets() {
 	case $1 in
