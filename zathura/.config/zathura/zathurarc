@@ -1,44 +1,49 @@
 # General
 
-set font "scientifica 8"
-set statusbar-home-tilde true
+set font 												"scientifica 8"
+set statusbar-home-tilde 				true
+set show-directories 						false
+set n-completion-items					10
+set recolor                     true
+set recolor-keephue             false
 
-# Base16 Iceberg
+# Base16 Monokai_Pro
 
-set default-bg                  "#161821"
-set default-fg                  "#c6c8d1"
+set default-bg                  "#2D2A2E"
+set default-fg                  "#FCFCFA"
 
-set statusbar-bg                "#1e2132"
-set statusbar-fg                "#c6c8d1"
+set statusbar-bg                "#403E41"
+set statusbar-fg                "#FCFCFA"
 
-set inputbar-bg                 "#161821"
+set inputbar-bg                 "#2D2A2E"
 set inputbar-fg                 "#89b8c2"
 
-set index-bg			"#1e2132"
-set index-fg			"#c6c8d1"
-set index-active-bg		"#84a0c6"
-set index-active-fg		"#1e2132"
+set index-bg										"#403E41"
+set index-fg										"#FCFCFA"
 
-set notification-bg             "#b4be82"
-set notification-fg             "#161821"
+set index-active-bg							"#AB9DF2"
+set index-active-fg							"#403E41"
 
-set notification-error-bg       "#e27878"
-set notification-error-fg       "#161821"
+set notification-bg             "#FFD866"
+set notification-fg             "#2D2A2E"
 
-set notification-warning-bg     "#e2a478"
-set notification-warning-fg     "#161821"
+set notification-error-bg       "#FF6188"
+set notification-error-fg       "#2D2A2E"
 
-set highlight-color             "#1e2132"
+set notification-warning-bg     "#FFD866"
+set notification-warning-fg     "#2D2A2E"
+
+set completion-bg               "#403E41"
+set completion-fg               "#FCFCFA"
+
+set completion-group-bg					"#A9DC76"
+set completion-group-fg					"#2D2A2E"
+
+set completion-highlight-bg     "#2D2A2E"
+set completion-highlight-fg     "#FC9867"
+
+set highlight-color             "#403E41"
 set highlight-active-color      "#444b71"
 
-set completion-bg               "#1e2132"
-set completion-fg               "#444b71"
-
-set completion-highlight-fg     "#c6c8d1"
-set completion-highlight-bg     "#818596"
-
-set recolor-lightcolor          "#161821"
-set recolor-darkcolor           "#c6c8d1"
-
-set recolor                     "false"
-set recolor-keephue             "false"
+set recolor-lightcolor          "#2D2A2E"
+set recolor-darkcolor           "#FCFCFA"

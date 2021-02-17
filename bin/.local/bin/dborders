@@ -4,9 +4,9 @@
 #
 # credits: https://github.com/6gk/polka
 
-outer='0x161821'   # outer
-inner1='0x84a0c6'  # focused
-inner2='0x444b71'  # normal
+outer='0x2D2A2E'   # outer
+inner1='0xA9DC76'  # focused
+inner2='0x727072'  # normal
 
 targets() {
 	case $1 in
@@ -16,7 +16,7 @@ targets() {
 	esac
 }
 
-draw() { chwb2 -I "$i" -O "$o" -i "2" -o "5" $@ 2> /dev/null; }
+draw() { chwb2 -I "$i" -O "$o" -i "1" -o "6" $@ 2> /dev/null; }
 
 # initial draw, and then subscribe to events
 { echo; bspc subscribe node_geometry node_focus; } |

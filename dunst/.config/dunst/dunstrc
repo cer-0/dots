@@ -10,7 +10,7 @@
     padding = 8
     horizontal_padding = 8
     frame_width = 2
-    frame_color = "#e2a478"
+    frame_color = "#78DCE8"
     separator_color = frame
     sort = yes
     idle_threshold = 120
@@ -19,7 +19,7 @@
     corner_radius = 10
     markup = full
     format = "<b>%s</b>\n%b"
-    alignment = left
+    alignment = rigth
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
@@ -50,18 +50,18 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#1e2132"
-    foreground = "#c6c8d1"
-    frame_color = "#89b8c2"
+    background = "#2D2A2E"
+    foreground = "#FCFCFA"
+    frame_color = "#727072"
     timeout = 7
 
 [urgency_normal]
-    background = "#1e2132"
-    foreground = "#c6c8d1"
+    background = "#2D2A2E"
+    foreground = "#FCFCFA"
     timeout = 10
 
 [urgency_critical]
-    background = "#1e2132"
-    foreground = "#d2d7de"
-    frame_color = "#e27878"
+    background = "#2D2A2E"
+    foreground = "#FCFCFA"
+    frame_color = "#AB9DF2"
     timeout = 0

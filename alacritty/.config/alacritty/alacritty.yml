@@ -12,42 +12,48 @@ scrolling:
   history: 10000
 font:
   normal:
-    family: scientifica
+    family: terminus
     style: Regular
   bold:
-    family: scientifica
+    family: terminus
     style: Bold
   italic:
-    family: scientifica
+    family: terminus
     style: Italic
   bold_italic:
-    family: scientifica
+    family: terminus
     style: Bold Italic
   size: 8.0
+# Colors (Monokai Pro)
 colors:
+  # Default colors
   primary:
-    background: '#161821'
-    foreground: '#d2d4de'
+    background: '#2D2A2E'
+    foreground: '#FCFCFA'
+
+  # Normal colors
   normal:
-    black:   '#161821'
-    red:     '#e27878'
-    green:   '#b4be82'
-    yellow:  '#e2a478'
-    blue:    '#84a0c6'
-    magenta: '#a093c7'
-    cyan:    '#89b8c2'
-    white:   '#c6c8d1'
+    black:   '#403E41'
+    red:     '#FF6188'
+    green:   '#A9DC76'
+    yellow:  '#FFD866'
+    blue:    '#FC9867'
+    magenta: '#AB9DF2'
+    cyan:    '#78DCE8'
+    white:   '#FCFCFA'
+
+  # Bright colors
   bright:
-    black:   '#6b7089'
-    red:     '#e98989'
-    green:   '#c0ca8e'
-    yellow:  '#e9b189'
-    blue:    '#91acd1'
-    magenta: '#ada0d3'
-    cyan:    '#95c4ce'
-    white:   '#d2d4de'
+    black:   '#727072'
+    red:     '#FF6188'
+    green:   '#A9DC76'
+    yellow:  '#FFD866'
+    blue:    '#FC9867'
+    magenta: '#AB9DF2'
+    cyan:    '#78DCE8'
+    white:   '#FCFCFA'
 cursor:
-  style: Underline
+  style: Block
 live_config_reload: true
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }

@@ -1,9 +1,9 @@
 /* based on slate: https://github.com/davatorium/rofi-themes/blob/master/User%20Themes/slate.rasi */
 
 * {
-  background-color: #1e2132;
-  border-color: #161821;
-  text-color: #c6c8d1;
+  background-color: #2D2A2E;
+  border-color: #403E41;
+  text-color: #FCFCFA;
   spacing: 0;
   width: 300px;
   font: "scientifica 8";
@@ -20,9 +20,9 @@ prompt {
 }
 
 textbox {
-  background-color: #161821;
+  background-color: #2D2A2E;
   border: 0 0 1px 0;
-  border-color: #161821;
+  border-color: #FFD866;
   padding: 8px 10px;
 }
 
@@ -42,5 +42,5 @@ element {
 }
 
 element selected {
-  background-color: #444b71;
+  background-color: #403E41;
 }

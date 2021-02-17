@@ -4,6 +4,9 @@ call plug#begin()
 " git
 Plug 'tpope/vim-fugitive'
 
+" syntax and indent
+Plug 'sheerun/vim-polyglot'
+
 " comments
 Plug 'tpope/vim-commentary'
 
@@ -25,6 +28,7 @@ Plug 'Yggdroot/indentLine'
 
 " color schemes
 Plug 'cocopon/iceberg.vim'
+Plug 'phanviet/vim-monokai-pro'
 
 call plug#end()
 
@@ -63,7 +67,7 @@ if exists('+termguicolors')
        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
        set termguicolors
 endif
-colorscheme iceberg
+colorscheme monokai_pro
 
 " leader
 let mapleader = " "
@@ -122,7 +126,7 @@ let g:goyo_height = 40
 
 " lightline
 set laststatus=2
-let g:lightline = { 'colorscheme': 'iceberg' }
+let g:lightline = { 'colorscheme': 'monokai_pro' }
 
 " nerdtree
 nnoremap <Leader>t :NERDTreeToggle<CR>
