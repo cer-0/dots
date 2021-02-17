@@ -1,4 +1,4 @@
-mus/.config/ncmpcpp/error.log
-mus/.config/mpd/playlists
-mus/.config/mpd/database
+music/.config/ncmpcpp/error.log
+music/.config/mpd/playlists
+music/.config/mpd/database
 nvim/.config/nvim/plugged
