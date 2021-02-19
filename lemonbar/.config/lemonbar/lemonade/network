@@ -10,10 +10,10 @@ while true; do
 	# ssid=$(nmcli device | awk '{if ($2 == "wifi") {print $4}}')
 	ssid=$(iwctl station $device show | awk '{if ($1 == "Connected") {print $NF}}')
 
-	if [ -z "$ssid" ]; then
-		[ -z "$ipa" ] && net='' || net=" $ipa"
-	else
-		net=" $ssid"
+	if [ -z "$ssid" ]; then # if no ssid we're either wired or disconnected
+		[ -z "$ipa" ] && net='' || net=" $ipa"
+	else # else we have a wireless connection
+		net=" $ssid"
 	fi
 
 	printf "%s\n" "ntw $net"

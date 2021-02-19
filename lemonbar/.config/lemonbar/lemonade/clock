@@ -10,9 +10,9 @@ do
 	read -r d < "$FILE"
 
 	if [ "$d" == "1" ]; then
-		printf "%s\n" "clk  $v "
+		printf "%s\n" "clk  $v "
 	else
-		printf "%s\n" "clk  $v"
+		printf "%s\n" "clk  $v"
 	fi
 
 	sleep 5

@@ -9,8 +9,8 @@ do
 	sts=$(amixer get Master | tail -1 | awk '{print $NF}')
 
 	case $sts in
-		'[on]') von=" $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | cut -d "%" -f 1)" ;;
-		'[off]') von=" muted" ;;
+		'[on]') von=" $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | cut -d "%" -f 1)" ;;
+		'[off]') von="" ;;
 	esac
 
 	printf "%s\n" "vol $von"
