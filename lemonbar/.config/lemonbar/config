@@ -8,7 +8,7 @@ ffont='lemon-8'
 icons='Siji-8'
 
 format='\
-$wks  $mus\
+%{l}$wks  $mus\
 %{c}$clk\
 %{r}$ntw   $vol   $bat   $dat'
 
