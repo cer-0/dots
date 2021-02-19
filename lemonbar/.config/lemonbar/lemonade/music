@@ -16,8 +16,13 @@ do
 			*playing*)
 				[ ${#inf} -gt 60 ] &&
 					inf=$(printf '%.60s...' "$inf")
-				var=" $inf";;
-			*) var='';;
+				var="%{F#828997}%{F-} $inf";;
+			*paused*)
+				[ ${#inf} -gt 60 ] &&
+					inf=$(printf '%.60s...' "$inf")
+				var="%{F#828997}%{F-} $inf";;
+			*)
+				var="%{F#5c6370}%{F-}";;
 		esac
 
 		printf "%s\n" "mus $var"
