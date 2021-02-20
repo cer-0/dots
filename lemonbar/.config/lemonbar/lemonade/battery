@@ -15,19 +15,15 @@ while true; do
 
 			case "$cap" in
 				4|3) var="" ;;
-				# '4'|'3') var="%{F#5c6370}%{F-}" ;;
 				2)   var="" ;;
-				# '2') var="%{F#98c379%{F-}" ;;
 				1)   var="" ;;
-				# '1') var="%{F#e5c07b%{F-}" ;;
-				0)   var="" ;;
-				# '0') var="%{F#e06c75}%{F-}" ;;
+				0)   var="%{F#e06c75}%{F-}" ;;
 				*) var=''
 			esac ;;
 		"Charging")
 			var="" ;;
 		*)
-			var='%{R}%{R-}' ;;
+			var='%{F#e5c07b}%{F-}' ;;
 	esac
 
 	printf "%s\n" "bat $var"
