@@ -6,6 +6,7 @@ set show-directories            false
 set n-completion-items          10
 set recolor                     true
 set recolor-keephue             false
+set guioptions                  s
 
 # Base16 Onedark
 
@@ -18,11 +19,11 @@ set statusbar-fg                "#abb2bf"
 set inputbar-bg                 "#282c34"
 set inputbar-fg                 "#89b8c2"
 
-set index-bg                    "#5c6370"
+set index-bg                    "#282c34"
 set index-fg                    "#abb2bf"
 
 set index-active-bg             "#c678dd"
-set index-active-fg             "#5c6370"
+set index-active-fg             "#282c34"
 
 set notification-bg             "#e5c07b"
 set notification-fg             "#282c34"
