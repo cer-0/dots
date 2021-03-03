@@ -46,13 +46,5 @@ $ stow -t ~ -D vim tmux bash
 
 Check the [dependencies wiki](https://github.com/cer-0/dots/wiki/Dependencies) page.
 
-##### more screenshots:
-
 ![2](./.img/2.png)
-trying to solve day 4 of [aoc](adventofcode.com). `tmux`, `vim` and `firefox`.
-
-![3](./.img/3.png)
-`rofi`.
-
-![4](./.img/4.png)
-`slock`.
+`tmux`, `vim` and `feh`.
