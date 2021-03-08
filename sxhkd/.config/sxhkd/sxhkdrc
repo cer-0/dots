@@ -16,7 +16,7 @@ super + shift + {q,r}
 
 # kill node
 super + q
-	bspc node -k
+	bspc node -c
 
 # alternate between the tiled and monocle layout
 super + m
@@ -28,7 +28,7 @@ super + y
 
 # set the window state
 super + {t,shift + t,f,shift + f}
-	bspc node -t {tiled,pseudo_tiled,fullscreen,floating}
+	bspc node -t {tiled,~pseudo_tiled,~fullscreen,~floating}
 
 # set the node flags
 super + shift + {m,s}
