@@ -37,9 +37,9 @@ $ stow -t ~ -D vim tmux bash
 - compositor: `picom` (fork of `compton`)
 - browser: `firefox`
 - fonts: [scientifica](https://github.com/NerdyPepper/scientifica), [lemon](https://github.com/cmvnd/fonts) and [siji](https://github.com/stark/siji) as icons
-- colorscheme: [iceberg](https://github.com/cocopon/iceberg.vim)
-- gtk theme: adwaita
-- gtk icons: [boston](https://github.com/heychrisd/Boston-Icons) and [papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+- colorscheme: [onedark](https://github.com/joshdick/onedark.vim)
+- gtk theme: [arc](https://github.com/jnsh/arc-theme)
+- gtk icons: [arc](https://github.com/horst3180/arc-icon-theme) or [boston](https://github.com/heychrisd/Boston-Icons)
 - screen locker: a fork of [`slock`](https://github.com/cer-0/suckless/tree/iceberg/slock)
 
 ##### dependencies:
