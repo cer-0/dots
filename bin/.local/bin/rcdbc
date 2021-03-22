@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+archivo=$1
+
+# echo "DEP: mv '${archivo}' '${nuevo_nombre}'"
+mv -- "${archivo}" "${archivo##*- }"

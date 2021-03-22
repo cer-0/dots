@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+#
+# Crea los directorios correspondientes de ARTISTA/ALBUM en el directorio de
+# música, extrae el archivo zip y renombra las canciones al patron NUM CANCION.
+#
+# Dependencias: xdg-user-dir, rcdbc (script personal)
+
+XDG_MUSIC_DIR="$(xdg-user-dir MUSIC)"
+MUSIC_DIR=${XDG_MUSIC_DIR:-"$HOME/mus"}
+archivo=${1}
+
+uso() {
+	printf "%s\n" "Uso: $0 archivo-zip"
+}
+
+if [ "$(file -b "$archivo" | awk '{print $1}')" != "Zip" ]; then
+	uso
+else
+	archivo=${1%.*}
+	album=${archivo#*- }
+	artista=${archivo%% -*}
+	directorio="${MUSIC_DIR}/${artista}/${album}"
+
+	echo "DEP: procesando '${album}' de '${artista}'..."
+	mkdir -p "${directorio}"
+	unzip -d "${directorio}" "${archivo}.zip"
+	cd "${directorio}"
+	# echo "DEP: renombrabdo archivos"
+	find . -type f \( -name '*.mp3' -o -name '*.flac' -o -name '*.ogg' \) -exec rcdbc {} \;
+fi
