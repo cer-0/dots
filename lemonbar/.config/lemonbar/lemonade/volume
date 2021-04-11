@@ -15,5 +15,5 @@ do
 
 	printf "%s\n" "vol $von"
 
-	sleep 3
+	sleep 1
 done

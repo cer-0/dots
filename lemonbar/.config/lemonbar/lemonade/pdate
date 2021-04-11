@@ -5,5 +5,5 @@
 while true; do
 	v=$(date +'%A %d %b')
 	printf "%s\n" "dat  $v"
-	sleep 5m
+	sleep 1m
 done

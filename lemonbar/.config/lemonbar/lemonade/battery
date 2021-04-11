@@ -28,5 +28,5 @@ while true; do
 
 	printf "%s\n" "bat $var"
 
-	sleep 10
+	sleep 3
 done

@@ -18,5 +18,5 @@ while true; do
 
 	printf "%s\n" "ntw $net"
 
-	sleep 3
+	sleep 1
 done
