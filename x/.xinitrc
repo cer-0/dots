@@ -16,7 +16,7 @@ dunst &
 walp
 
 # Load latam and us as keyboards, use Alt+Caps to switch between them 
-setxkbmap -model pc105 -layout us,latam -option "grp:alt_caps_toggle"
+setxkbmap -model pc105 -layout us,latam -option "grp:alt_caps_toggle" -option "compose:ralt"
 
 # Bored of manual mounting and unmounting?
 thunar --daemon &
