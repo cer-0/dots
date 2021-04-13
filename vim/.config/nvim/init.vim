@@ -1,22 +1,18 @@
 " plugins
 call plug#begin()
 
-" git
-Plug 'tpope/vim-fugitive'
+" general
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-rooter'
 
 " syntax and indent
 Plug 'sheerun/vim-polyglot'
 
-" comments
-Plug 'tpope/vim-commentary'
+" git
+Plug 'tpope/vim-fugitive'
 
-" set root directory
-Plug 'airblade/vim-rooter'
-
-" rust
-Plug 'rust-lang/rust.vim'
-
-" lisps
+" lisp
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'kovisoft/slimv'
 
@@ -24,9 +20,8 @@ Plug 'kovisoft/slimv'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'preservim/nerdtree'
-Plug 'Yggdroot/indentLine'
 
-" color schemes
+" color scheme
 Plug 'joshdick/onedark.vim'
 
 call plug#end()
@@ -58,6 +53,10 @@ set number
 set relativenumber
 set colorcolumn=80
 set scrolloff=1
+set linebreak
+
+" clipboard
+set clipboard=unnamed,unnamedplus
 
 " colors
 set background=dark
@@ -77,7 +76,7 @@ let mapleader = " "
 nnoremap <leader>s :update<cr>
 nnoremap <leader>w :update<cr>
 nnoremap <Leader>q :q<cr>
-nnoremap <Leader>Q :qa<cr>
+nnoremap <Leader>Q :q!<cr>
 
 " move between buffers
 nnoremap <C-h> <C-w>h
