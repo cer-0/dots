@@ -29,7 +29,7 @@ $ stow -t ~ -D vim tmux bash
 - panel/bar: [`lemonbar-xft`](https://github.com/krypt-n/bar)
 - notifications: `dunst`
 - file manager: `nnn` (and `thunar` sometimes)
-- editor: `vim`
+- editor: `nvim`
 - music player: `ncmpcpp` (`mpd` client)
 - multiplexer: `tmux`
 - reader: `zathura`
@@ -47,4 +47,4 @@ $ stow -t ~ -D vim tmux bash
 Check the [dependencies wiki](https://github.com/cer-0/dots/wiki/Dependencies) page.
 
 ![2](./.img/2.png)
-`tmux`, `vim` and `feh`.
+`tmux`, `nvim` and `feh`.
