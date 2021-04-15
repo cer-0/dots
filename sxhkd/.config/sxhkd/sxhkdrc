@@ -75,23 +75,27 @@ super + space; {w,b,e,q,l,p,n,m}
 
 # volume
 XF86Audio{RaiseVolume,LowerVolume}
-	pactl set-sink-volume 0 {+2%,-2%}
+	pactl set-sink-volume @DEFAULT_SINK@ {+2%,-2%}
 	# amixer set Master {2+,2-,toggle}
-
 XF86AudioMute
-	pactl set-sink-mute 0 toggle
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# media
+# mic input
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# media control
 XF86Audio{Play,Next,Prev,Stop}
 	mpc {toggle,next,prev,stop} # can replace 'mpc' for 'playerctl -a'
 
 super + alt + {space,Right,Left,o}
-	mpc {toggle,next,prev,stop}
+	playerctl -a {play-pause,next,previous,stop}
 
 # run screenshot script
 Print
 	mshot
 
+# screen lock
 XF86ScreenSaver
 	slock
 
