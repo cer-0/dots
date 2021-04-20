@@ -4,7 +4,7 @@
 
 ALACRITTYRC="$HOME/.config/alacritty/alacritty.yml"
 FONT1="scientifica"
-FONT2="Cascadia Code"
+FONT2="IBM Plex Mono"
 
 change_font () {
 	oldfont="$1" # not positional parameters but instead funciton
