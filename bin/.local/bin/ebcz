@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-# Crea los directorios correspondientes de ARTISTA/ALBUM en el directorio de
-# música, extrae el archivo zip y renombra las canciones al patron NUM CANCION.
+# Crea los directorios correspondientes de ARTISTA/ÁLBUM en el directorio de
+# música, extrae el archivo zip y renombra las canciones al patrón NUM CANCION.
 #
 # Dependencias: xdg-user-dir, rcdbc (script personal)
 
@@ -16,15 +16,20 @@ uso() {
 if [ "$(file -b "$archivo" | awk '{print $1}')" != "Zip" ]; then
 	uso
 else
-	archivo=${1%.*}
-	album=${archivo#*- }
-	artista=${archivo%% -*}
+	# Las dos siguientes líneas pueden ser reemplazadas por:
+	# $ basename $1 .zip
+	zip=${archivo#*/} # Elimina prefijos de carpetas.
+	zip=${zip%.*} # Elimina la extensión del archivo.
+	album=${zip#*- }
+	artista=${zip%% -*}
 	directorio="${MUSIC_DIR}/${artista}/${album}"
 
 	echo "DEP: procesando '${album}' de '${artista}'..."
 	mkdir -p "${directorio}"
-	unzip -d "${directorio}" "${archivo}.zip"
+	unzip -d "${directorio}" "${archivo}"
 	cd "${directorio}"
-	# echo "DEP: renombrabdo archivos"
-	find . -type f \( -name '*.mp3' -o -name '*.flac' -o -name '*.ogg' \) -exec rcdbc {} \;
+	# echo "DEP: renombrando archivos"
+	find "${directorio}" \
+		-type f \( -name '*.mp3' -o -name '*.flac' -o -name '*.ogg' \) \
+		-exec rcdbc {} \;
 fi
