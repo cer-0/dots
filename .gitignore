@@ -2,3 +2,6 @@ music/.config/ncmpcpp/error.log
 music/.config/mpd/playlists
 music/.config/mpd/database
 vim/.config/nvim/plugged/
+irssi/.config/irssi/scripts
+irssi/.config/irssi/certs
+irssi/.config/irssi/*.theme
