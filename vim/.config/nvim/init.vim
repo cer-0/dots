@@ -65,8 +65,8 @@ if exists('+termguicolors')
        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
        set termguicolors
 endif
-colorscheme onedark
 let g:onedark_terminal_italics=1
+colorscheme onedark
 
 " leader
 let mapleader = " "
