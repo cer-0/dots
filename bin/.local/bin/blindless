@@ -7,12 +7,13 @@ FONT1="scientifica"
 FONT2="IBM Plex Mono"
 
 change_font () {
-	oldfont="$1" # not positional parameters but instead funciton
-	newfont="$2" # arguments
+	oldfont="$1" # funciton arguments instead of positional parameters
+	newfont="$2"
 	sed -i -e "s/${oldfont}/${newfont}/g" "$ALACRITTYRC"
 }
 
-font=$(awk '{if ($1 == "family:") {print $2; exit}}' "$ALACRITTYRC")
+# note, we might have different indentation levels (more than 6 spaces)
+font=$(grep "family" $ALACRITTYRC | uniq | cut -d ' ' -f 6-)
 
 if [ "$font" == "$FONT1" ]; then
 	change_font "$FONT1" "$FONT2"
