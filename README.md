@@ -22,25 +22,27 @@ $ stow -t ~ -D vim tmux bash
 
 ##### stuff i use
 
-- distribution: [Arch Linux](https://archlinux.org)
-- window manager: `bspwm`
-- terminal: `alacritty`
-- launcher: `rofi`
-- panel/bar: [`lemonbar-xft`](https://github.com/krypt-n/bar)
-- notifications: `dunst`
-- file manager: `nnn` (and `thunar` sometimes)
-- editor: `nvim`
-- music player: `ncmpcpp` (`mpd` client)
-- multiplexer: `tmux`
-- reader: `zathura`
-- image viewer: `feh`
-- compositor: `picom` (fork of `compton`)
-- browser: `firefox`
-- fonts: [scientifica](https://github.com/NerdyPepper/scientifica), [lemon](https://github.com/cmvnd/fonts) and [siji](https://github.com/stark/siji) as icons
-- colorscheme: [onedark](https://github.com/joshdick/onedark.vim)
-- gtk theme: [arc](https://github.com/jnsh/arc-theme)
-- gtk icons: [arc](https://github.com/horst3180/arc-icon-theme) or [boston](https://github.com/heychrisd/Boston-Icons)
-- screen locker: a fork of [`slock`](https://github.com/cer-0/suckless/tree/iceberg/slock)
+| :( :( :( :(  | software                          |
+|--------------|-----------------------------------|
+|distribution  |[Arch Linux](https://archlinux.org)|
+|window manager|`bspwm`|
+|terminal      |`alacritty`|
+|launcher      |`rofi`|
+|panel/bar     |[`lemonbar-xft`](https://github.com/krypt-n/bar)|
+|notifications |`dunst`|
+|file manager  |`nnn` (and `thunar` sometimes)|
+|editor        |`nvim`|
+|music player  |`ncmpcpp` (`mpd` client)|
+|multiplexer   |`tmux`|
+|reader        |`zathura`|
+|image viewer  |`feh`|
+|compositor    |`picom`|
+|browser       |`firefox`|
+|fonts         |[scientifica](https://github.com/NerdyPepper/scientifica), [lemon](https://github.com/cmvnd/fonts) and [siji](https://github.com/stark/siji) as icons|
+|colorscheme   |[onedark](https://github.com/joshdick/onedark.vim)|
+|gtk theme     |[arc](https://github.com/jnsh/arc-theme)|
+|gtk icons     |[arc](https://github.com/horst3180/arc-icon-theme) or [boston](https://github.com/heychrisd/Boston-Icons)|
+|screen locker |a fork of [`slock`](https://github.com/cer-0/suckless/tree/iceberg/slock)|
 
 ##### dependencies:
 

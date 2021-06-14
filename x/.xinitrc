@@ -12,7 +12,7 @@ picom --config $HOME/.config/picom/picom.conf &
 # Start the notification manager
 dunst &
 
-# Set a wallpaper (check '.local/bin')
+# Set wallpaper (check 'bin')
 walp
 
 # Load latam and us as keyboards, use Alt+Caps to switch between them 
@@ -21,7 +21,7 @@ setxkbmap -model pc105 -layout us,latam -option "grp:alt_caps_toggle" -option "c
 # Bored of manual mounting and unmounting?
 thunar --daemon &
 
-# (running sxhkd from here makes the gid different from the one in bspwmrc,this
+# (running sxhkd from here makes the gid different from the one in bspwmrc, this
 # way sxhkd won't die when bspwm is restarted).
 pgrep -x sxhkd > /dev/null || sxhkd &
 
