@@ -1,14 +1,5 @@
 servers = (
   {
-    address = "chat.freenode.net";
-    chatnet = "Freenode";
-    port = "6697";
-    use_tls = "yes";
-    tls_cert = "~/.config/irssi/certs/nick.pem";
-    tls_verify = "no";
-    autoconnect = "yes";
-  },
-  {
     address = "mbrserver.com";
     chatnet = "MBR";
     port = "6667";
@@ -22,16 +13,19 @@ servers = (
     tls_cert = "~/.config/irssi/certs/nick.pem";
     tls_verify = "yes";
     autoconnect = "no";
+  },
+  {
+    address = "irc.libera.chat";
+    chatnet = "libera";
+    port = "6697";
+    use_tls = "yes";
+    tls_cert = "~/.config/irssi/certs/nick.pem";
+    tls_verify = "no";
+    autoconnect = "yes";
   }
 );
 
 chatnets = {
-  Freenode = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
   OFTC = {
     type = "IRC";
     autosendcmd = "wait -oftc 2000";
@@ -40,35 +34,36 @@ chatnets = {
     max_whois = "1";
   };
   MBR = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
+  libera = { type = "IRC"; };
 };
 
 channels = (
-  { name = "#archlinux"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#archlinux-mx"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#archlinux-aur"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#archlinux-wiki"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#archlinux-bugs"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#archlinux"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "#archlinux-mx"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "#archlinux-aur"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "#archlinux-wiki"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "#archlinux-bugs"; chatnet = "Libera"; autojoin = "Yes"; },
   {
     name = "#archlinux-testing";
-    chatnet = "Freenode";
+    chatnet = "Libera";
     autojoin = "Yes";
   },
   {
     name = "#archlinux-security";
-    chatnet = "Freenode";
+    chatnet = "Libera";
     autojoin = "Yes";
   },
-  { name = "#bash"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#bspwm"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#lisp"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#ruby"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "##math"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#scheme"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#python"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#neovim"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "##re"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "##algorithms"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "##ibmthinkpad"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#bash"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "#bspwm"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "#lisp"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "#ruby"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "##math"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "#scheme"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "#python"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "#neovim"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "##re"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "##algorithms"; chatnet = "Libera"; autojoin = "Yes"; },
+  { name = "##ibmthinkpad"; chatnet = "Libera"; autojoin = "Yes"; },
   { name = "#general"; chatnet = "MBR"; autojoin = "Yes"; },
   { name = "#tor-south"; chatnet = "OFTC"; autojoin = "Yes"; },
   { name = "#tor-project"; chatnet = "OFTC"; autojoin = "Yes"; },
