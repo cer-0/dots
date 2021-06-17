@@ -5,7 +5,7 @@
 # credits: https://github.com/6gk/polka
 
 outer='0x282c34'   # outer
-inner1='0x98c379'  # focused
+inner1='0x61afef'  # focused
 inner2='0x5c6370'  # normal
 
 targets() {
