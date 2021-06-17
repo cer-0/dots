@@ -70,8 +70,8 @@ super + alt + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-super + space; {w,b,e,q,l,p,n,m}
-	{firefox,walp,alacritty -e nnn,out,slock,passmenu,alacritty -e ncmpcpp,bmon}
+super + space; {w,b,e,q,l,p,n,m,k}
+	{firefox,walp,alacritty -e nnn,out,slock,passmenu,alacritty -e ncmpcpp,bmon,scky}
 
 # volume
 XF86Audio{RaiseVolume,LowerVolume}

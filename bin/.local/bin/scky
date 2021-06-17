@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# toggle screenkey script
+#
+# dependencies: screenkey
+
+rinra() {
+	if ( pgrep -x "$1" > /dev/null ); then
+		pkill "$1"
+	else
+		"$@" &
+	fi
+}
+
+rinra screenkey -t 3 \
+	-p bottom          \
+	-s small           \
+	-f 'JetBrains Mono' \
