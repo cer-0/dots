@@ -5,6 +5,7 @@ xset -b
 
 # Reload Xresources
 [ -f ~/.Xresources ] && xrdb -merge -I$HOME ~/.Xresources
+[ -f ~/.local/share/fonts/fonts.dir ] && xset +fp ~/.local/share/fonts
 
 # Start the compositor (no screen tearing)
 picom --config $HOME/.config/picom/picom.conf &
