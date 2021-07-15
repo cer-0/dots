@@ -15,14 +15,14 @@ do
 		case "$sts" in
 			*playing*)
 				[ ${#inf} -gt 60 ] &&
-					inf=$(printf '%.60s...' "$inf")
-				var="%{F#828997}%{F-} $inf";;
+					inf=$(printf '%.70s...' "$inf")
+				var="♫ %{F#828997}$inf%{F-}";;
 			*paused*)
 				[ ${#inf} -gt 60 ] &&
 					inf=$(printf '%.60s...' "$inf")
-				var="%{F#828997}%{F-} $inf";;
+				var="= %{F#828997}$inf%{F-}";;
 			*)
-				var="%{F#5c6370}%{F-}";;
+				var="%{F#5c6370}Ø%{F-}";;
 		esac
 
 		printf "%s\n" "mus $var"

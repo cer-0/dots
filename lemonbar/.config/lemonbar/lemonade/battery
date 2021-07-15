@@ -11,19 +11,13 @@ while true; do
 		"Discharging")
 			read -r cap < $BAT_DIR/capacity
 
-			cap=$((cap / 25))
-
-			case "$cap" in
-				4|3) var="" ;;
-				2)   var="" ;;
-				1)   var="" ;;
-				0)   var="%{F#e06c75}%{F-}" ;;
-				*) var=''
-			esac ;;
+			var="%{F#98c379}♥%{F-} $cap"
+			[ "$cap" -le 25 ] && \
+				var="%{F#282c34}%{B#e06c75}$cap%{F-}%{B-}" ;;
 		"Charging")
-			var="" ;;
+			var="%{F#e5c07b}♥%{F-} $cap" ;;
 		*)
-			var='%{F#e5c07b}%{F-}' ;;
+			var='%{F#828997}✔%{F-}' ;;
 	esac
 
 	printf "%s\n" "bat $var"

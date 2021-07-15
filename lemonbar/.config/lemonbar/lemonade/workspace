@@ -9,5 +9,5 @@
 { echo; xtitle -s; } |
     while read -r win; do
         cur=$(bspc query -D -d --names)
-        printf '%s\n' "wks %{F#61afef}%{F-} $cur"
+        printf '%s\n' "wks @ %{F#c678dd}$cur%{F-}"
     done
