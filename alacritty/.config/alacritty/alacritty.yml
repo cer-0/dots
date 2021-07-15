@@ -1,5 +1,6 @@
 env:
   TERM: xterm-256color
+
 window:
   dimensions:
    columns: 80
@@ -8,49 +9,38 @@ window:
     x: 5
     y: 5
   startup_mode: Windowed
+
 scrolling:
   history: 10000
+
 font:
   normal:
-    family: scientifica
+    family: terminus
     style: Regular
   bold:
-    family: scientifica
+    family: terminus
     style: Bold
   italic:
-    family: scientifica
+    family: terminus
     style: Italic
   bold_italic:
-    family: scientifica
+    family: terminus
     style: Bold Italic
-  size: 8.0
+  size: 9
 
-# Colors (One Dark)
-colors:
-  primary:
-    background: '#282c34'
-    foreground: '#abb2bf'
-  cursor:
-    text:       CellBackground
-    cursor:     '#528bff' # syntax-cursor-color
-  selection:
-    text:       CellForeground
-    background: '#3e4451' # syntax-selection-color
-  normal:
-    black:      '#5c6370' # mono-3
-    red:        '#e06c75' # red 1
-    green:      '#98c379'
-    yellow:     '#e5c07b' # orange 2
-    blue:       '#61afef'
-    magenta:    '#c678dd'
-    cyan:       '#56b6c2'
-    white:      '#828997' # mono-2
+draw_bold_text_with_bright_colors: true
+
+import:
+  - "~/.config/alacritty/onedark.yml"
 
 cursor:
   style: Block
+
 live_config_reload: true
+
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
+
 key_bindings:
   - { key: V,        mods: Control|Shift, action: Paste            }
   - { key: Y,        mods: Control|Shift, action: PasteSelection   }
