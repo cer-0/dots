@@ -3,9 +3,7 @@ height=20
 BG='#282c34'
 FG='#abb2bf'
 
-font='scientifica-8'
-ffont='lemon-8'
-icons='Siji-8'
+font='terminus-8'
 
 format='\
 %{l}$wks  $mus\

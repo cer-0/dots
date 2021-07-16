@@ -22,9 +22,7 @@ done |
 		lemonbar	\
 		-g "x$height"	\
 		-o -1 \
-		-f "$icons"	\
 		-f "$font"	\
-		-f "$ffont"	\
 		-n "$NAME"	\
 		-B "$BG"	\
 		-F "$FG" &

@@ -16,10 +16,10 @@
     idle_threshold = 120
     font = terminus 8
     line_height = 2
-    corner_radius = 10
+    corner_radius = 0
     markup = full
     format = "<b>%s</b>\n%b"
-    alignment = rigth
+    alignment = left
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
@@ -27,7 +27,7 @@
     stack_duplicates = false
     hide_duplicate_count = false
     show_indicators = yes
-    icon_position = left
+    icon_position = right
     max_icon_size = 32
     icon_path =/usr/share/icons/Adwaita/16x16/devices/
     sticky_history = yes
