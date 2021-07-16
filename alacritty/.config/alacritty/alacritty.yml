@@ -26,9 +26,9 @@ font:
   bold_italic:
     family: terminus
     style: Bold Italic
-  size: 9
+  size: 8
 
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 import:
   - "~/.config/alacritty/onedark.yml"
