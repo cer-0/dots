@@ -2,11 +2,17 @@
 
 * {
   background-color: #282c34;
-  border-color: #5c6367;
+  border-color: #828997;
   text-color: #abb2bf;
   spacing: 0;
   width: 300px;
-  font: "scientifica 8";
+  font: "terminus 8";
+}
+
+window {
+  border-color: @border-color;
+  /* border-radius: 8px; */
+  border: 2px 2px 2px 2px;
 }
 
 inputbar {
@@ -20,9 +26,7 @@ prompt {
 }
 
 textbox {
-  background-color: #282c34;
-  border: 0 0 1px 0;
-  border-color: #5c6367;
+  background-color: @background-color;
   padding: 8px 10px;
 }
 
@@ -42,6 +46,6 @@ element {
 }
 
 element selected {
-  background-color: #4b5263;
-  text-color: #56b6c2;
+  background-color: @border-color;
+  text-color: @background-color;
 }
