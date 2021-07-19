@@ -38,7 +38,7 @@ $ stow -t ~ -D vim tmux bash
 |image viewer  |`feh`|
 |compositor    |`picom`|
 |browser       |`firefox`|
-|fonts         |[scientifica](https://github.com/NerdyPepper/scientifica), [lemon](https://github.com/cmvnd/fonts) and [siji](https://github.com/stark/siji) as icons|
+|fonts         |[terminus](http://terminus-font.sourceforge.net/)|
 |colorscheme   |[onedark](https://github.com/joshdick/onedark.vim)|
 |gtk theme     |[arc](https://github.com/jnsh/arc-theme)|
 |gtk icons     |[arc](https://github.com/horst3180/arc-icon-theme) or [boston](https://github.com/heychrisd/Boston-Icons)|
