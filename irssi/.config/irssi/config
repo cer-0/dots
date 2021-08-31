@@ -62,7 +62,6 @@ channels = (
   { name = "#python"; chatnet = "Libera"; autojoin = "Yes"; },
   { name = "#neovim"; chatnet = "Libera"; autojoin = "Yes"; },
   { name = "##re"; chatnet = "Libera"; autojoin = "Yes"; },
-  { name = "##algorithms"; chatnet = "Libera"; autojoin = "Yes"; },
   { name = "##ibmthinkpad"; chatnet = "Libera"; autojoin = "Yes"; },
   { name = "#general"; chatnet = "MBR"; autojoin = "Yes"; },
   { name = "#tor-south"; chatnet = "OFTC"; autojoin = "Yes"; },
