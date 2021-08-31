@@ -1,14 +1,14 @@
 #!/bin/sh
 
-E='HDMI-2'
-I='LVDS-1'
+INTERNAL="$(xrandr | awk '/ connected / {print $1}' | head -1)"
+EXTERNAL="$(xrandr | awk '/ connected / {print $1}' | tail -1)"
 WORKSPACES='0x0 0xA 0xB 0xC 0xD 0xE'
 
 if [ $(bspc query -M | wc -l) -eq 2 ]; then
-	xrandr --output $I --off --output $E --auto
-	bspc monitor $E -d $WORKSPACES
+	xrandr --output $INTERNAL --off --output $EXTERNAL --auto
+	bspc monitor $EXTERNAL -d $WORKSPACES
 	bspc desktop Desktop --remove > /dev/null
-	bspc monitor $I -r
+	bspc monitor $INTERNAL -r
 	walp
 else
 	bspc monitor -d $WORKSPACES
