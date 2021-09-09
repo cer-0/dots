@@ -1,108 +1,108 @@
 # terminal
 super + c
-	alacritty
+    alacritty
 
 # run programs
-super + e
-	rofi -show run
+super + {_,shift} e
+    rofi -show {run, drun}
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+    pkill -USR1 -x sxhkd
 
 # quit/restart bspwm
 super + shift + {q,r}
-	pkill -TERM panel; bspc {quit,wm -r}
+    pkill -TERM panel; bspc {quit,wm -r}
 
 # kill node
 super + q
-	bspc node -c
+    bspc node -c
 
 # alternate between the tiled and monocle layout
 super + m
-	bspc desktop -l next
+    bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
 super + y
-	bspc node newest.marked.local -n newest.!automatic.local
+    bspc node newest.marked.local -n newest.!automatic.local
 
 # set the window state
 super + {t,shift + t,f,shift + f}
-	bspc node -t {tiled,~pseudo_tiled,~fullscreen,~floating}
+    bspc node -t {tiled,~pseudo_tiled,~fullscreen,~floating}
 
 # set the node flags
 super + shift + {m,s}
-	bspc node -g {marked,sticky}
+    bspc node -g {marked,sticky}
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+    bspc node -{f,s} {west,south,north,east}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }n
-	bspc node -f {next,prev}.local
+    bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
 super + {comma,period}
-	bspc desktop -f {prev,next}.local
+    bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
-	bspc {node,desktop} -f last
+    bspc {node,desktop} -f last
 
 # focus or send to the given desktop
 super + {_,shift + }{1-3,7-9}
-	bspc {desktop -f,node -d} '^{1-6}'
+    bspc {desktop -f,node -d} '^{1-6}'
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+    bspc node -p {west,south,north,east}
 
 # cancel the preselection for the focused node
 super + ctrl + space
-	bspc node -p cancel
+    bspc node -p cancel
 
 # resize focused node
 super + alt + {h,j,k,l}
-	resize {west,south,north,east}
+    resize {west,south,north,east}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
 
 super + space; {w,b,e,q,l,p,n,m,k}
-	{firefox,walp,alacritty -e nnn,out,slock,passmenu,alacritty -e ncmpcpp,bmon,scky}
+    {firefox,walp,alacritty -e nnn,out,slock,passmenu,alacritty -e ncmpcpp,bmon,scky}
 
 # volume
 XF86Audio{RaiseVolume,LowerVolume}
-	pactl set-sink-volume @DEFAULT_SINK@ {+2%,-2%}
-	# amixer set Master {2+,2-,toggle}
+    pactl set-sink-volume @DEFAULT_SINK@ {+2%,-2%}
+    # amixer set Master {2+,2-,toggle}
 XF86AudioMute
-	pactl set-sink-mute @DEFAULT_SINK@ toggle
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # mic input
 XF86AudioMicMute
-	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # media control
 XF86Audio{Play,Next,Prev,Stop}
-	mpc {toggle,next,prev,stop} # can replace 'mpc' for 'playerctl -a'
+    mpc {toggle,next,prev,stop} # can replace 'mpc' for 'playerctl -a'
 
 super + alt + {space,Right,Left,o}
-	playerctl -a {play-pause,next,previous,stop}
+    playerctl -a {play-pause,next,previous,stop}
 
 # run screenshot script
 Print
-	mshot
+    mshot
 
 # screen lock
 XF86ScreenSaver
-	slock
+    slock
 
 # run bmon script
 XF86Display
-	bmon
+    bmon
 
 # toggle dunst's do not disturb mode
 super + F4
-	tdnd
+    tdnd
