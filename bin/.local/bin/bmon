@@ -18,10 +18,10 @@ DESK_NAMES='0x0 0xA 0xB 0xC 0xD 0xE'
 read -p LID_STATE < '/proc/acpi/button/lid/LID/state'
 
 # Reset double borders function
-rst_dbord() {
-	pkill -QUIT dborders
-	dborders &
-}
+# rst_dbord() {
+# 	pkill -QUIT dborders
+# 	dborders &
+# }
 
 # Reset panel function
 rst_pan() {
@@ -55,7 +55,7 @@ then
 	# Reorder desktops on builtin monitor.
 	bspc monitor "$INTERNAL" -o "$DESK_NAMES"
 	# Reset wallpaper, keyboard layouts and exit with no errors.
-	walp; kbd; rst_pan; rst_dbord; exit 0
+	walp; kbd; rst_pan; exit 0
 # If the script it's called when builtin monitor it's detected
 # by bspwm and the laptop lid is closed, then, use the external monitor.
 # elif [ "$LID_STATE" == "closed" ] && [ "$(bspc query -M --names)" == "$INTERNAL" ]; then
@@ -99,7 +99,7 @@ case $selection in
 		bspc monitor "$EXTERNAL" -r
 		bspc monitor "$INTERNAL" -o "$DESK_NAMES"
 		bspc desktop Desktop -r
-		walp; kbd; rst_pan; rst_dbord; exit 0
+		walp; kbd; rst_pan; exit 0
 		;;
 	"External"|"2")
 		xrandr --output "$INTERNAL" --off --output "$EXTERNAL" --auto
@@ -109,7 +109,7 @@ case $selection in
 		done
 		bspc monitor "$INTERNAL" -r; bspc desktop Desktop -r
 		bspc monitor "$EXTERNAL" -o "$DESK_NAMES"
-		walp; kbd; rst_pan; rst_dbord; exit 0;
+		walp; kbd; rst_pan; exit 0;
 		;;
 	"Extend to right"|"3")
 		xrandr --output "$EXTERNAL" --auto --right-of "$INTERNAL" --auto
@@ -119,7 +119,7 @@ case $selection in
 			bspc desktop "$i" --to-monitor "$EXTERNAL"
 		done
 		bspc desktop Desktop -r
-		walp; kbd; rst_pan; rst_dbord; exit 0;
+		walp; kbd; rst_pan; exit 0;
 		;;
 	# If no match in 'selection' exit with error status.
 	*) exit 1 ;;
