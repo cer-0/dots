@@ -43,12 +43,12 @@ channels = (
   { name = "#archlinux-aur"; chatnet = "Libera"; autojoin = "Yes"; },
   { name = "#archlinux-wiki"; chatnet = "Libera"; autojoin = "Yes"; },
   { name = "#archlinux-bugs"; chatnet = "Libera"; autojoin = "Yes"; },
-  {
+  { 
     name = "#archlinux-testing";
     chatnet = "Libera";
     autojoin = "Yes";
   },
-  {
+  { 
     name = "#archlinux-security";
     chatnet = "Libera";
     autojoin = "Yes";
