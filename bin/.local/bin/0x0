@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+#
+# uploads a file to http://0x0.st
+
+die() {
+    echo "${1:-Usage: ${0##*/} file|url}" >&2
+    exit 1
+}
+
+upload() {
+    local target="$1"
+    local ftype="${2:-file}"
+    local paste_url
+    paste_url="$(curl -s -F"$ftype=@$target" http://0x0.st )"
+    echo -n "$paste_url" | xclip -selection clipboard && \
+    echo -n "$paste_url" | xclip -selection clipboard && \
+        echo -e "\nUploaded to:\n\t$paste_url\nAnd copied to the clipboard"
+}
+
+is_url() {
+    local url="$1"
+    local url_regex='https?://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
+    if [[ "$url" =~ $url_regex ]]; then
+        upload "$url" "url"
+    fi
+}
+
+is_dir() {
+    local dir="$1"
+    if [[ -d "$dir" ]]; then
+        die "error: argument is a directory"
+    fi
+}
+
+is_file() {
+    local file="$1"
+    if [[ -f "$file" || "$file" == "-" ]]; then # file or stdin
+        upload "$file"
+    else
+        die "error: argument is not a file"
+    fi
+}
+
+main() {
+    argument="$1"
+    is_dir  "$argument"
+    is_url  "$argument"
+    is_file "$argument"
+}
+
+main "$1"
