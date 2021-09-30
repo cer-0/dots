@@ -91,6 +91,10 @@ XF86Audio{Play,Next,Prev,Stop}
 super + alt + {space,Right,Left,o}
     playerctl -a {play-pause,next,previous,stop}
 
+# screen backlight
+XF86MonBrightness{Up,Down}
+    brightnss {up,down}
+
 # run screenshot script
 Print
     mshot
