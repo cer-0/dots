@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#
+# script for changing the display brightness
+
+die() {
+    echo "${1:-Usage: ${0##*/} up|down}" >&2
+    exit 1
+}
+
+main() {
+    local argument="$1"
+    if [[ "$argument" == 'up' ]]; then
+        xbacklight -inc 7
+    elif [[ "$argument" == 'down' ]]; then
+        xbacklight -dec 7
+    else
+        die
+    fi
+}
+
+main "$1"
