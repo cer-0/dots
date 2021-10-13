@@ -5,15 +5,15 @@ FILE="$HOME/.cache/dunst_status"
 
 while true
 do
-	v=$(date +'%H:%M')
+    v=$(date +'%H:%M')
 
-	read -r d < "$FILE"
+    read -r d < "$FILE"
 
-	if [ "$d" == "1" ]; then
-		printf "%s\n" "clk ¡$v!"
-	else
-		printf "%s\n" "clk $v"
-	fi
+    if [ "$d" == "1" ]; then
+        printf "%s\n" "clk ¡$v!"
+    else
+        printf "%s\n" "clk $v"
+    fi
 
-	sleep 5
+    sleep 5
 done

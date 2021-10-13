@@ -8,25 +8,23 @@
 
 while true
 do
-	mpc | {
-		read -r inf
-		read -r sts
+    mpc | {
+        read -r inf
+            read -r sts
 
-		case "$sts" in
-			*playing*)
-				[ ${#inf} -gt 60 ] &&
-					inf=$(printf '%.70s...' "$inf")
-				var="♫ %{F#828997}$inf%{F-}";;
-			*paused*)
-				[ ${#inf} -gt 60 ] &&
-					inf=$(printf '%.60s...' "$inf")
-				var="= %{F#828997}$inf%{F-}";;
-			*)
-				var="%{F#5c6370}Ø%{F-}";;
-		esac
+            case "$sts" in
+                *playing*)
+                    [ ${#inf} -gt 60 ] && inf=$(printf '%.70s...' "$inf")
+                    var="♫ %{F#828997}$inf%{F-}";;
+                *paused*)
+                    [ ${#inf} -gt 60 ] && inf=$(printf '%.60s...' "$inf")
+                    var="= %{F#828997}$inf%{F-}";;
+                *)
+                    var="%{F#5c6370}Ø%{F-}";;
+            esac
 
-		printf "%s\n" "mus $var"
-	}
-	
-	mpc idle player
+            printf "%s\n" "mus $var"
+        }
+
+    mpc idle player
 done

@@ -6,14 +6,17 @@
 
 while true
 do
-	sts=$(amixer get Master | tail -1 | awk '{print $NF}')
+    sts=$(amixer get Master | tail -1 | awk '{print $NF}')
 
-	case $sts in
-		'[on]') von="§ $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | cut -d "%" -f 1)" ;;
-		'[off]') von="%{F#e5c07b}!%{F-}" ;;
-	esac
+    case $sts in
+        '[on]') von="§ $(amixer get Master \
+            | tail -1 \
+            | sed 's/.*\[\([0-9]*%\)\].*/\1/' \
+            | cut -d "%" -f 1)" ;;
+        '[off]') von="%{F#e5c07b}!%{F-}" ;;
+    esac
 
-	printf "%s\n" "vol $von"
+    printf "%s\n" "vol $von"
 
-	sleep 1
+    sleep 1
 done
