@@ -5,22 +5,23 @@
 BAT_DIR='/sys/class/power_supply/BAT0'
 
 while true; do
-	read -r sts < $BAT_DIR/status
+    read -r sts < $BAT_DIR/status
 
-	case "$sts" in
-		"Discharging")
-			read -r cap < $BAT_DIR/capacity
+    case "$sts" in
+        "Discharging")
+            read -r cap < $BAT_DIR/capacity
+            var="%{F#98c379}♥%{F-} $cap"
 
-			var="%{F#98c379}♥%{F-} $cap"
-			[ "$cap" -le 25 ] && \
-				var="%{F#282c34}%{B#e06c75}$cap%{F-}%{B-}" ;;
-		"Charging")
-			var="%{F#e5c07b}♥%{F-} $cap" ;;
-		*)
-			var='%{F#828997}✔%{F-}' ;;
-	esac
+            [ "$cap" -le 25 ] \
+                && var="%{F#282c34}%{B#e06c75}$cap%{F-}%{B-}" ;;
+        "Charging")
+            var="%{F#e5c07b}♥%{F-} $cap" ;;
+        "Unknown")
+            var="%{F#828997}Ø%{F-}" ;;
+        *)
+            var='%{F#828997}✔%{F-}' ;;
+    esac
 
 	printf "%s\n" "bat $var"
-
 	sleep 3
 done
