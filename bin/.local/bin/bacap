@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# output the average of the battery capacity remaining
+
+total_cap=0
+bat_counter=0
+
+for i in /sys/class/power_supply/BAT*
+do
+    read -r battery_cap < "${i}/capacity"
+    total_cap=$((total_cap + battery_cap))
+    bat_counter=$((bat_counter + 1))
+done 2> /dev/null
+
+echo $((total_cap / bat_counter))
