@@ -15,18 +15,18 @@ scrolling:
 
 font:
   normal:
-    family: terminus
+    family: Terminus
     style: Regular
   bold:
-    family: terminus
+    family: Terminus
     style: Bold
   italic:
-    family: terminus
+    family: Terminus
     style: Italic
   bold_italic:
-    family: terminus
+    family: Terminus
     style: Bold Italic
-  size: 8
+  size: 10
 
 draw_bold_text_with_bright_colors: false
 

@@ -1,11 +1,11 @@
 # General
 
-set font                        "terminus 8"
+set font                        "Terminus 10"
 set statusbar-home-tilde        true
 set show-directories            false
 set n-completion-items          10
 set recolor                     true
-set recolor-keephue             false
+set recolor-keephue             true
 set guioptions                  s
 
 # Base16 Onedark

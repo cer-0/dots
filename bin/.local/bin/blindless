@@ -3,8 +3,8 @@
 # toggle between two fonts in alacritty.
 
 ALACRITTYRC="$HOME/.config/alacritty/alacritty.yml"
-FONT1="terminus"
-FONT2="JetBrains Mono"
+FONT1="Terminus"
+FONT2="scientifica"
 
 change_font () {
 	oldfont="$1" # funciton arguments instead of positional parameters
