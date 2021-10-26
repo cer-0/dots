@@ -1,11 +1,12 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "300x5-20-20"
+    width = 350
+    origin = bottom-right
+    offset = 20x20
     indicate_hidden = yes
     shrink = no
     transparency = 0
-    notification_height = 0
     separator_height = 2
     padding = 8
     horizontal_padding = 8
@@ -26,10 +27,10 @@
     ignore_newline = no
     stack_duplicates = false
     hide_duplicate_count = false
-    show_indicators = yes
+    show_indicators = false
     icon_position = right
     max_icon_size = 32
-    icon_path =/usr/share/icons/Adwaita/16x16/devices/
+    icon_path = /usr/share/icons/Papirus-Dark/22x22/status/:/usr/share/icons/Papirus-Dark/22x22/devices/
     sticky_history = yes
     history_length = 10
     dmenu = /usr/bin/dmenu -p dunst:
@@ -37,17 +38,10 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    startup_notification = false
     force_xinerama = false
 
 [experimental]
     per_monitor_dpi = false
-
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
 
 [urgency_low]
     background = "#282c34"
