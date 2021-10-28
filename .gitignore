@@ -7,3 +7,4 @@ irssi/.config/irssi/scripts
 irssi/.config/irssi/certs
 irssi/.config/irssi/*.theme
 bin/.local/share
+gtk-3.0/.config/gtk-3.0/bookmarks
