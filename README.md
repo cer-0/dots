@@ -41,8 +41,8 @@ $ stow -t ~ -D vim tmux bash
 |fonts         |[terminus](http://terminus-font.sourceforge.net/)|
 |colorscheme   |[onedark](https://github.com/joshdick/onedark.vim)|
 |gtk theme     |[arc](https://github.com/jnsh/arc-theme)|
-|gtk icons     |[arc](https://github.com/horst3180/arc-icon-theme) or [boston](https://github.com/heychrisd/Boston-Icons)|
-|screen locker |a fork of [`slock`](https://github.com/cer-0/suckless/tree/iceberg/slock)|
+|gtk icons     |[papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)|
+|screen locker |[`slock`](https://github.com/cer-0/suckless/tree/iceberg/slock) (fork)|
 
 ##### dependencies:
 
