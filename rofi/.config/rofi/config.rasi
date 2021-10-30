@@ -1,5 +1,5 @@
 configuration {
-  font: "Terminus 8";
+  font: "Terminus 10";
   show-icons: true;
   kb-cancel: "Escape,Ctrl+c,Ctrl+q";
 }
