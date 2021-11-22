@@ -1,22 +1,51 @@
 #!/bin/bash
 #
-# toggle between two fonts in alacritty.
+# toggle between two fonts in multiple programs.
 
 ALACRITTYRC="$HOME/.config/alacritty/alacritty.yml"
+DOOMRC="$HOME/.config/doom/config.el"
+GTKRC="$HOME/.config/gtk-3.0/settings.ini"
+ZATHURARC="$HOME/.config/zathura/zathurarc"
+ROFIRC="$HOME/.config/rofi/config.rasi"
+LEMONBARRC="$HOME/.config/lemonbar/config"
+DUNSTRC="$HOME/.config/dunst/dunstrc"
 FONT1="Terminus"
-FONT2="scientifica"
+FONT2="JetBrains Mono"
 
 change_font () {
-	oldfont="$1" # funciton arguments instead of positional parameters
-	newfont="$2"
-	sed -i -e "s/${oldfont}/${newfont}/g" "$ALACRITTYRC"
+    local oldfont="$1"
+    local newfont="$2"
+    local file="$3"
+
+    sed -i -e "s/${oldfont}/${newfont}/g" "$file"
+}
+
+reset_programs() {
+    pkill -QUIT panel
+    panel & 2> /dev/null
+
+    pkill dunst
+    dunst & 2>&1 /dev/null
+
+    bspc wm --restart # is this really necessary?
+    pgrep -x GeckoMain && { pkill GeckoMain && firefox & } # ugly solution
 }
 
 # note, we might have different indentation levels (more than 6 spaces)
-font=$(grep "family" $ALACRITTYRC | uniq | cut -d ' ' -f 6-)
+current_font=$(grep "family" $ALACRITTYRC | uniq | cut -d ' ' -f 6-)
 
-if [ "$font" == "$FONT1" ]; then
-	change_font "$FONT1" "$FONT2"
+if [ "$current_font" == "$FONT1" ]; then
+    for i in "$ALACRITTYRC" "$DOOMRC" "$GTKRC" "$ZATHURARC" \
+        "$ROFIRC" "$LEMONBARRC" "$DUNSTRC"
+    do
+        change_font "$current_font" "$FONT2" "$i"
+    done
+    reset_programs
 else
-	change_font "$FONT2" "$FONT1"
+    for i in "$ALACRITTYRC" "$DOOMRC" "$GTKRC" "$ZATHURARC" \
+        "$ROFIRC" "$LEMONBARRC" "$DUNSTRC"
+    do
+        change_font "$current_font" "$FONT1" "$i"
+    done
+    reset_programs
 fi
