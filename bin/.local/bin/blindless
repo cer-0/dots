@@ -27,8 +27,8 @@ reset_programs() {
     pkill dunst
     dunst & 2>&1 /dev/null
 
-    bspc wm --restart # is this really necessary?
-    pgrep -x GeckoMain && { pkill GeckoMain && firefox & } # ugly solution
+    bspc wm --restart
+    ( pgrep -x GeckoMain ) && { pkill GeckoMain && firefox & }
 }
 
 # note, we might have different indentation levels (more than 6 spaces)
