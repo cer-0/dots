@@ -24,7 +24,7 @@ while true; do
         "Unknown")
             var="%{F#5c6370}Ø%{F-}" ;;
         *)
-            var='%{F#828997}✔%{F-}' ;;
+            var='%{F#828997}?%{F-}' ;;
     esac
 
 	printf "%s\n" "bat $var"

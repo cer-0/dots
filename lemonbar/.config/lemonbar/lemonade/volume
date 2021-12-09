@@ -9,7 +9,7 @@ do
     sts=$(amixer get Master | tail -1 | awk '{print $NF}')
 
     case $sts in
-        '[on]') von="%{F#c678dd}§%{F-} $(amixer get Master \
+        '[on]') von="%{F#c678dd}<%{F-} $(amixer get Master \
             | tail -1 \
             | sed 's/.*\[\([0-9]*%\)\].*/\1/' \
             | cut -d "%" -f 1)" ;;
