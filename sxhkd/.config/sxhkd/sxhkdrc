@@ -3,8 +3,8 @@ super + c
     alacritty
 
 # run programs
-super + {_,shift} e
-    rofi -show {run, drun}
+super + e
+    rofi -show run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -22,19 +22,15 @@ super + q
 super + m
     bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
-    bspc node newest.marked.local -n newest.!automatic.local
-
 # set the window state
 super + {t,shift + t,f,shift + f}
     bspc node -t {tiled,~pseudo_tiled,~fullscreen,~floating}
 
 # set the node flags
-super + shift + {m,s}
-    bspc node -g {marked,sticky}
+super + shift + s
+    bspc node -g sticky
 
-# focus the node in the given direction
+# move/focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
 
@@ -42,25 +38,17 @@ super + {_,shift + }{h,j,k,l}
 super + {_,shift + }n
     bspc node -f {next,prev}.local
 
-# focus the next/previous desktop in the current monitor
-super + {comma,period}
-    bspc desktop -f {prev,next}.local
-
 # focus the last node/desktop
 super + {grave,Tab}
     bspc {node,desktop} -f last
 
-# focus or send to the given desktop
+# focus desktop or send node to the given desktop
 super + {_,shift + }{1-3,7-9}
     bspc {desktop -f,node -d} '^{1-6}'
 
 # preselect the direction
-super + ctrl + {h,j,k,l}
-    bspc node -p {west,south,north,east}
-
-# cancel the preselection for the focused node
-super + ctrl + space
-    bspc node -p cancel
+super + ctrl + {h,j,k,l,space}
+    bspc node -p {west,south,north,east,cancel}
 
 # resize focused node
 super + alt + {h,j,k,l}
@@ -70,8 +58,11 @@ super + alt + {h,j,k,l}
 super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
-super + space; {w,b,e,q,l,p,n,m,k}
-    {firefox,walp,alacritty -e nnn,out,slock,passmenu,alacritty -e ncmpcpp,bmon,scky}
+# super + shift + {l,Delete,m}
+#     {slock,out,bmon}
+# 
+# super + alt + {e,p,m,s}
+#     {alacritty -e nnn -Cd,passmenu,alacritty -e ncmpcpp,scky}
 
 # volume
 XF86Audio{RaiseVolume,LowerVolume}
