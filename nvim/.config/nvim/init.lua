@@ -21,3 +21,5 @@ require("circles").setup()
 require('project_nvim').setup()
 -- neogit
 require('neogit').setup()
+-- nvim-tree
+require('nvim-tree').setup()
