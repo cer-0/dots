@@ -13,7 +13,7 @@ INTERNAL="$(echo $monitors | cut -d' ' -f1)"
 EXTERNAL="$(echo $monitors | cut -d' ' -f2)"
 # This should be read from 'bspwmrc' instead of defining it here, or
 # 'bswmrc' should export this variable.
-DESK_NAMES='0x0 0xA 0xB 0xC 0xD 0xE'
+DESK_NAMES='0x1 0x2 0x3 0x4 0xA 0xB 0xC 0xD'
 # Status of the laptop lid.
 read -p LID_STATE < '/proc/acpi/button/lid/LID/state'
 
@@ -91,7 +91,7 @@ case $selection in
 		# If builtin monitor has more than one desktop, pass the last
 		# three desktops of 'DESK_NAMES' back to builtin monitor.
 		else
-			for i in $(printf "%s" "$DESK_NAMES" | cut -d' ' -f 4-6)
+			for i in $(printf "%s" "$DESK_NAMES" | cut -d' ' -f 5-8)
 			do
 				bspc desktop "$i" --to-monitor "$INTERNAL"
 			done
@@ -115,7 +115,7 @@ case $selection in
 		xrandr --output "$EXTERNAL" --auto --right-of "$INTERNAL" --auto
 		# Pass to external monitor the last three desktops
 		# of 'DESK_NAMES'.
-		for i in $(printf "%s" "$DESK_NAMES" | cut -d' ' -f 4-6); do
+		for i in $(printf "%s" "$DESK_NAMES" | cut -d' ' -f 5-8); do
 			bspc desktop "$i" --to-monitor "$EXTERNAL"
 		done
 		bspc desktop Desktop -r

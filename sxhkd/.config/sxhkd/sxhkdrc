@@ -43,8 +43,8 @@ super + {grave,Tab}
     bspc {node,desktop} -f last
 
 # focus desktop or send node to the given desktop
-super + {_,shift + }{1-3,7-9}
-    bspc {desktop -f,node -d} '^{1-6}'
+super + {_,shift + }{1-4,7-9,0}
+    bspc {desktop -f,node -d} '^{1-8}'
 
 # preselect the direction
 super + ctrl + {h,j,k,l,space}
@@ -64,14 +64,13 @@ super + {Left,Down,Up,Right}
 # super + alt + {e,p,m,s}
 #     {alacritty -e nnn -Cd,passmenu,alacritty -e ncmpcpp,scky}
 
-# volume
+# volume / mic
 XF86Audio{RaiseVolume,LowerVolume}
     pactl set-sink-volume @DEFAULT_SINK@ {+3%,-3%}
-    # amixer set Master {2+,2-,toggle}
+
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# mic input
 XF86AudioMicMute
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
 

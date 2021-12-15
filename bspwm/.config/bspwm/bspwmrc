@@ -2,7 +2,7 @@
 
 INTERNAL="$(xrandr | awk '/ connected / {print $1}' | head -1)"
 EXTERNAL="$(xrandr | awk '/ connected / {print $1}' | tail -1)"
-WORKSPACES='0x0 0xA 0xB 0xC 0xD 0xE'
+WORKSPACES='0x1 0x2 0x3 0x4 0xA 0xB 0xC 0xD'
 
 if [ $(bspc query -M | wc -l) -eq 2 ]; then
 	xrandr --output $INTERNAL --off --output $EXTERNAL --auto
