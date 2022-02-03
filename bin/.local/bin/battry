@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Calculate the remaining of two batteries as one.
+
+read -r BAT0 < /sys/class/power_supply/BAT0/capacity
+read -r BAT1 < /sys/class/power_supply/BAT1/capacity
+
+bat0_percentage=$((BAT0 * 25))
+bat1_percentage=$((BAT1 * 75))
+total_capacity=$(((bat0_percentage + bat1_percentage) / 100))
+
+printf "%s" $total_capacity
