@@ -52,7 +52,7 @@ map('t', '<C-l>', '<C-\\><C-N><C-w>l')
 -- NvimTree
 map('n', '<leader>nn', ':NvimTreeToggle<CR>')
 map('n', '<leader>nr', ':NvimTreeRefresh<CR>')
-map('n', '<leader>nf', ':NvimTreeFindFile<CR>')
+map('n', '<leader>nf', ':NvimTreeFindFileToggle<CR>')
 
 -- Telescope
 map('n', '<leader>ff', ':Telescope find_files<CR>')
