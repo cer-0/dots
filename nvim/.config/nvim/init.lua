@@ -7,7 +7,7 @@ require 'plugins'
 require('lualine').setup {
     options = {
         icons_enabled = false,
-        theme = 'onedark'
+        theme = 'gruvbox-material'
     }
 }
 
