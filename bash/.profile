@@ -1,8 +1,9 @@
-PATH=$HOME/.local/bin:$(ruby -e 'puts Gem.user_dir')/bin:$PATH
+export                                    \
+PS1='\W > '                               \
+EDITOR=nvim                               \
+BROWSER=/usr/bin/firefox                  \
+LESSHISTFILE=/dev/null                    \
+GEM_HOME="$(ruby -e 'puts Gem.user_dir')" \
+BAT_THEME=ansi
 
-export                         \
-PS1='\W > '                    \
-EDITOR=nvim                    \
-BROWSER=/usr/bin/firefox       \
-LESSHISTFILE=/dev/null         \
-BAT_THEME=OneHalfDark
+export PATH=$HOME/.local/bin:$GEM_HOME/bin:$PATH
