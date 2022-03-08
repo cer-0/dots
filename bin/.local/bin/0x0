@@ -8,13 +8,24 @@ die() {
 }
 
 upload() {
+    if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+        ( which wl-copy ) || die "Missing dependency: wl-clipboard"
+    else
+        ( which xclip ) || die "Missing dependency: xclip"
+    fi
+    
     local target="$1"
     local ftype="${2:-file}"
-    local paste_url
-    paste_url="$(curl -s -F"$ftype=@$target" http://0x0.st )"
-    echo -n "$paste_url" | xclip -selection clipboard && \
-    echo -n "$paste_url" | xclip -selection clipboard && \
-        echo -e "\nUploaded to:\n\t$paste_url\nAnd copied to the clipboard"
+    local paste_url="$(curl -s -F"$ftype=@$target" http://0x0.st )"
+
+    if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+        echo -n "$paste_url" | wl-copy && \
+            echo -e "\nUploaded to:\n\t$paste_url\nAnd copied to the clipboard"
+    else
+        echo -n "$paste_url" | xclip -selection clipboard && \
+            echo -e "\nUploaded to:\n\t$paste_url\nAnd copied to the clipboard"
+    fi
+
 }
 
 is_url() {
