@@ -1,6 +1,6 @@
 #### dotfiles
 
-![1](./.img/1.png)
+Wayland setup.
 
 ##### install
 
@@ -25,28 +25,20 @@ $ stow -t ~ -D vim tmux bash
 | :( :( :( :(  | software                          |
 |--------------|-----------------------------------|
 |distribution  |[Arch Linux](https://archlinux.org)|
-|window manager|`bspwm`|
+|window manager|`sway`|
 |terminal      |`alacritty`|
-|launcher      |`rofi`|
-|panel/bar     |[`lemonbar-xft`](https://github.com/krypt-n/bar)|
-|notifications |`dunst`|
+|launcher      |`wofi`|
+|panel/bar     |[`waybar`](https://github.com/krypt-n/bar)|
+|notifications |`mako`|
 |file manager  |`nnn` (and `thunar` sometimes)|
 |editor        |`nvim`|
 |music player  |`ncmpcpp` (`mpd` client)|
 |multiplexer   |`tmux`|
 |reader        |`zathura`|
-|image viewer  |`feh`|
-|compositor    |`picom`|
+|image viewer  |`none`|
 |browser       |`firefox`|
-|fonts         |[terminus](http://terminus-font.sourceforge.net/)|
-|colorscheme   |[onedark](https://github.com/joshdick/onedark.vim)|
-|gtk theme     |[arc](https://github.com/jnsh/arc-theme)|
-|gtk icons     |[papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)|
-|screen locker |[`slock`](https://github.com/cer-0/suckless/tree/iceberg/slock) (fork)|
+|colorscheme   |[gruvbox-material](https://github.com/sainnhe/gruvbox-material)|
 
 ##### dependencies:
 
-Check the [dependencies wiki](https://github.com/cer-0/dots/wiki/Dependencies) page.
-
-![2](./.img/2.png)
-`tmux`, `nvim` and `feh`.
+WIP: Check the [dependencies wiki](https://github.com/cer-0/dots/wiki/Dependencies) page.
