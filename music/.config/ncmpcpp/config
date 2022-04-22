@@ -4,7 +4,7 @@ mpd_host = localhost
 mpd_port = 6600
 mpd_music_dir = "~/mus"
 lyrics_directory = "~/.cache/ncmpcpp/lyrics"
-execute_on_song_change = dunstify -r 404 -i "/usr/share/icons/Arc/emblems/symbolic/emblem-music-symbolic.svg" "$(mpc current -f %title%)" "$(mpc current -f '%artist% - %album%')"
+execute_on_song_change = notify-send -i "/usr/share/icons/Adwaita/scalable/emblems/emblem-music-symbolic.svg" "$(mpc current -f %title%)" "$(mpc current -f '%artist% - %album%')"
 
 # appearance
 visualizer_data_source = /tmp/mpd.fifo

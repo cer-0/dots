@@ -9,7 +9,7 @@ ZATHURARC="$HOME/.config/zathura/zathurarc"
 ROFIRC="$HOME/.config/rofi/config.rasi"
 LEMONBARRC="$HOME/.config/lemonbar/config"
 DUNSTRC="$HOME/.config/dunst/dunstrc"
-FONT1="Terminus"
+FONT1="IBM Plex Mono"
 FONT2="JetBrains Mono"
 
 change_font () {
@@ -21,13 +21,6 @@ change_font () {
 }
 
 reset_programs() {
-    pkill -QUIT panel
-    panel & 2> /dev/null
-
-    pkill dunst
-    dunst & 2>&1 /dev/null
-
-    bspc wm --restart
     ( pgrep -x GeckoMain ) && { pkill GeckoMain && firefox & }
 }
 
