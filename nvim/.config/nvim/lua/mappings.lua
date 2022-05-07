@@ -55,10 +55,11 @@ map('n', '<leader>nr', ':NvimTreeRefresh<CR>')
 map('n', '<leader>nf', ':NvimTreeFindFileToggle<CR>')
 
 -- Telescope
-map('n', '<leader>ff', ':Telescope find_files<CR>')
-map('n', '<leader>fg', ':Telescope live_grep<CR>')
-map('n', '<leader>fb', ':Telescope buffers<CR>')
-map('n', '<leader>fh', ':Telescope help_tags<CR>')
+map('n', '<leader>ff', ':lua require("telescope.builtin").find_files({hidden=true})<CR>')
+map('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>')
+map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
+map('n', '<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>')
+map('n', '<leader>os', ':lua require("telescope.builtin").spell_suggest()<CR>')
 
 -- TrueZen
 map('n', '<leader>za', '<cmd>TZAtaraxis<CR>')
