@@ -10,21 +10,14 @@
         "max-length": 50
     },
     "mpd": {
-        "format": " {stateIcon} {randomIcon}{repeatIcon} {artist} - {title}",
-        "format-disconnected": " ):",
-        "format-stopped": " {consumeIcon} {randomIcon}{repeatIcon}{singleIcon}Stopped",
+        "format": " {stateIcon} {artist} - {title}",
+        "format-disconnected": "  ",
+        "format-stopped": "  ",
         "unknown-tag": "N/A",
         "interval": 2,
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
         "state-icons": {
             "paused": "",
-            "playing": ""
+            "playing": ""
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
@@ -55,7 +48,7 @@
             "hands-free": "",
             "headset": "",
             "phone": "",
-            "default": ["", "", ""]
+            "default": [""]
         },
         "on-click": "alacritty -e pulsemixer"
     },
@@ -72,6 +65,6 @@
     "clock": {
         // "timezones": ["America/Mexico_City", "UTC"],
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%H:%M  %d %B}"
+        "format": "{:%H:%M    %d %B}"
     }
 }
