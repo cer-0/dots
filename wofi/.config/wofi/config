@@ -1,0 +1,6 @@
+width = 20%
+dynamic_lines = true
+key_up = Control_L-p
+key_down = Control_L-n
+hide_scroll = true
+style = /home/cer0/.config/wofi/style.css
