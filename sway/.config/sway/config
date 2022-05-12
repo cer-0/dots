@@ -1,4 +1,4 @@
-# Read `man 5 sway` for a complete reference.
+# Read `man 5 sway` for a complete eference.
 
 ### Variables
 
@@ -11,22 +11,16 @@ set $down  j
 set $up    k
 set $right l
 
-# Terminal emulator
 set $term  alacritty
-
-# Program launcher
 set $menu  wofi --show run
 
 ### Output configuration
 
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /usr/share/backgrounds/02.jpg fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
+# Background
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+output eDP-1 resolution 1920x1080 position 1920,0
+output "Hewlett Packard HP 23er 3CM831162X   " resolution 1920x1080 position 0,0
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
@@ -73,7 +67,13 @@ bindsym $mod+c exec $term
 bindsym $mod+q kill
 
 # Start your launcher
-bindsym $mod+e exec $menu
+bindsym $mod+d exec $menu
+
+# File manager
+bindsym $mod+Shift+e exec $term -e nnn -C -d
+
+# Music player
+bindsym $mod+Shift+m exec $term -e ncmpcpp
 
 # mouse button for dragging.
 floating_modifier $mod normal
@@ -82,7 +82,7 @@ floating_modifier $mod normal
 bindsym $mod+Shift+r reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaymsg exit
+bindsym $mod+Shift+q exec swaymsg exit
 
 # Move your focus around
 bindsym $mod+$left focus left
@@ -90,21 +90,11 @@ bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
 
-# bindsym $mod+Left focus left
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
-# bindsym $mod+Right focus right
-
 # Move the focused window with the same, but add Shift
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
-
-# bindsym $mod+Shift+Left move left
-# bindsym $mod+Shift+Down move down
-# bindsym $mod+Shift+Up move up
-# bindsym $mod+Shift+Right move right
 
 # Switch to workspace
 bindsym $mod+1 workspace number 1
@@ -131,7 +121,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # Layout stuff:
-#
+
 # "split" the current object of your focus (horizontal and vertical)
 bindsym $mod+b splith
 bindsym $mod+v splitv
@@ -161,9 +151,9 @@ bindsym $mod+minus scratchpad show
 
 # Resizing containers:
 mode "resize" {
-    bindsym $left resize shrink width 20px
-    bindsym $down resize grow height 20px
-    bindsym $up resize shrink height 20px
+    bindsym $left  resize shrink width 20px
+    bindsym $down  resize grow height 20px
+    bindsym $up    resize shrink height 20px
     bindsym $right resize grow width 20px
 
     # Return to default mode
@@ -180,16 +170,35 @@ bar swaybar_command waybar
 
 include /etc/sway/config.d/*
 
-# Adittional bindings
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+# Make sharing indicator window floating
+for_window [title="Firefox — Sharing Indicator"] floating enable
 
 # Wayland enviroment variables
 exec "systemctl --user import-environment"
 
-# Make sharing indicator window floating
-for_window [title="Firefox — Sharing Indicator"] floating enable
+# Adittional bindings
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+
+bindsym $mod+Mod1+Left  exec playerctl -a previous
+bindsym $mod+Mod1+Down  exec playerctl -a play-pause
+bindsym $mod+Mod1+Up    exec playerctl -a stop
+bindsym $mod+Mod1+Right exec playerctl -a next
+
+bindsym $mod+Ctrl+Left  exec mpc prev
+bindsym $mod+Ctrl+Down  exec mpc toggle
+bindsym $mod+Ctrl+Up    exec mpc stop
+bindsym $mod+Ctrl+Right exec mpc next
+
+# bindsym Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/"$(date +%s)s.png"
+# bindsym $mod+Shift+s  exec grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $(xdg-user-dir PICTURES)/"$(date +%s)w.png"
+bindsym $mod+Shift+s  exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/"$(date +%s)m.png"
+
+bindsym $mod+Ctrl+s exec grim -g "$(slurp)" - | wl-copy
+# bindsym $mod+Alt+s  exec grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy
+# bindsym Mod1+Ctrl+Print  exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
