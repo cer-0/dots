@@ -15,12 +15,20 @@ set $term  alacritty
 set $menu  wofi --show run
 
 ### Output configuration
-
 # Background
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/cer0/pic/wallpaper/Walter_Langley_-_Never_Morning_Wore_to_Evening_but_Some_Heart_Did_Break.jpg fill
 
-output eDP-1 resolution 1920x1080 position 1920,0
-output "Hewlett Packard HP 23er 3CM831162X   " resolution 1920x1080 position 0,0
+set $laptop "Unknown 0x103D 0x00000000"
+set $external "Hewlett Packard HP 23er 3CM831162X   "
+
+# Clamshell mode
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+exec_always /home/cer0/.local/bin/clamshell_sway
+
+output $laptop resolution 1920x1080 position 0,0
+output $external resolution 1920x1080 position 1920,0
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
@@ -40,7 +48,7 @@ output "Hewlett Packard HP 23er 3CM831162X   " resolution 1920x1080 position 0,0
 
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_layout us
-    xkb_options compose:ralt,compose:prsc
+    xkb_options compose:ralt
 }
 
 input "1241:41619:OBINS_OBINS_AnnePro2" {
@@ -50,7 +58,7 @@ input "1241:41619:OBINS_OBINS_AnnePro2" {
 
 input "2:10:TPPS/2_IBM_TrackPoint" {
     accel_profile adaptive
-    pointer_accel 0.6
+    pointer_accel 1.0
 }
 
 input "1739:0:Synaptics_TM3276-022" events disabled
@@ -61,7 +69,6 @@ input "9094:17199:Raydium_Corporation_Raydium_Touch_System" events disabled
 
 # Start a terminal
 bindsym $mod+Return exec $term
-bindsym $mod+c exec $term
 
 # Kill focused window
 bindsym $mod+q kill
@@ -195,10 +202,29 @@ bindsym $mod+Ctrl+Down  exec mpc toggle
 bindsym $mod+Ctrl+Up    exec mpc stop
 bindsym $mod+Ctrl+Right exec mpc next
 
-# bindsym Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/"$(date +%s)s.png"
-# bindsym $mod+Shift+s  exec grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $(xdg-user-dir PICTURES)/"$(date +%s)w.png"
-bindsym $mod+Shift+s  exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/"$(date +%s)m.png"
+mode "screenshot" {
+    bindsym m exec screenshot monitor
+    bindsym w exec screenshot window
+    bindsym r exec screenshot region
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+bindsym $mod+Print mode "screenshot"
 
-bindsym $mod+Ctrl+s exec grim -g "$(slurp)" - | wl-copy
-# bindsym $mod+Alt+s  exec grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy
-# bindsym Mod1+Ctrl+Print  exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
+mode "screenshot-copy" {
+    bindsym m exec screenshot -c monitor
+    bindsym w exec screenshot -c window
+    bindsym r exec screenshot -c region
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+bindsym Ctrl+Print mode "screenshot-copy"
+
+mode "screenshot-edit" {
+    bindsym m exec screenshot -s monitor
+    bindsym w exec screenshot -s window
+    bindsym r exec screenshot -s region
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+bindsym Mod1+Print mode "screenshot-edit"
