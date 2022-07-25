@@ -1,50 +1,46 @@
-###############
-#  ~/.bashrc  #
-###############
+#
+# ~/.bashrc
+#
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-# Source me!
+
+# Additional environment variables
 source $HOME/.profile
-# Do not add to history duplicated commands
+
+# Do not add duplicated commands to history
 export HISTCONTROL=ignoredups
-# Auto cd
+
+# Write only the name of a directory to automatically cd into it
 shopt -s autocd
-# Auto line wrap on window resize
+
+# Auto wrap lines on window resize
 shopt -s checkwinsize
-# vi
+
+# Bash arguments|commands completion, requires bash-completion
+. /usr/share/bash-completion/bash_completion
+
+# vi mode in the prompt
 # set -o vi
 
-#########
-#  tty  #
-#########
-
-# [ "$(tty)" == "/dev/tty{1,2,3,4,5,6}" ] && setfont /usr/share/kbd/consolefonts/Lat2-Terminus16.psfu.gz
-# setfont /usr/share/kbd/consolefonts/gr928-8x16-thin.psfu.gz
-# setfont /usr/share/kbd/consolefonts/Lat2-Terminus16.psfu.gz
-
-
-###########
-#  alias  #
-###########
-
-alias esx='exec startx'
-alias sx='startx'
-alias ls='ls --color=auto'
-alias ll='ls -lsh'
-alias la='ls -a'
-alias mkd='mkdir -p'
-alias f='find . -iname'
-alias fr='find / -iname'
-alias v='nvim'
-alias g='git'
-alias gdb='gdb -q'
-alias gdbn='gdb -q -n'
-alias py='python -q'
-alias free='free -h'
-alias p='sudo pacman'
-alias xo='xdg-open'
-alias n='nnn -C -d'
-alias t='tree -L 1'
-alias irc='irssi --home=~/.config/irssi'
-alias irssi='irssi --home=~/.config/irssi'
+# aliases
+alias F='find / -iname' \
+    f='find . -iname' \
+    free='free -h' \
+    g='git' \
+    gdb='gdb -q' \
+    gdbn='gdb -q -n' \
+    irc='irssi --home=~/.config/irssi' \
+    irssi='irssi --home=~/.config/irssi' \
+    la='ls -a' \
+    ll='ls -lsh' \
+    ls='ls --color=auto' \
+    mkd='mkdir -p' \
+    n='nnn -C -d' \
+    p='sudo pacman' \
+    py='python -q' \
+    sy='sudo systemctl'
+    sx='exec startx' \
+    t='tree -L 1' \
+    v='nvim' \
+    xo='xdg-open'
