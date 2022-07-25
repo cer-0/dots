@@ -53,5 +53,4 @@ cmd [[ au TermOpen term://* setlocal nonumber laststatus=0 ]]
 
 -- where is this supposed to go?
 g.update_cwd = 1
-g.nvim_tree_respect_buf_cwd = 1
-
+g.respect_buf_cwd = 1
