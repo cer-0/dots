@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+laptop="Unknown 0x103D 0x00000000"
+
+if grep -q open /proc/acpi/button/lid/LID/state; then
+    swaymsg output "$laptop" enable
+else
+    swaymsg output "$laptop" disable
+fi
