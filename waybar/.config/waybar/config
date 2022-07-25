@@ -4,7 +4,7 @@
     "height": 26,
     "spacing": 4,
     "modules-left": ["sway/workspaces", "sway/mode", "mpd"],
-    "modules-center": ["sway/window"],
+    "modules-center": [""],
     "modules-right": ["network", "pulseaudio", "battery", "battery#bat2", "clock"],
     "sway/window": {
         "max-length": 50
@@ -63,8 +63,10 @@
         "bat": "BAT2"
     },
     "clock": {
-        // "timezones": ["America/Mexico_City", "UTC"],
+        "interval": 30,
+        "format": " {:%H:%M    %d %B}",
+        "max-lenght": 30,
+        "timezones": ["America/Mexico_City", "UTC"],
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%H:%M    %d %B}"
     }
 }
