@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+#
+# Wayland screenshot script
+#
+# dependencies: grim slurp jq wayland-clipboard swappy xdg-user-dir
+
+die() {
+    cat <<EOF >&2
+${1:-Usage: ${0##*/} [option] selection}
+
+[option]:
+    -c|--clipboard: copy the screenshot to the clipboard. Needs 'wl-clipboard'.
+    -s|--swappy: use 'swappy' to edit the screenshot. Needs 'swappy'.
+
+selection:
+    region:
+        Use 'slurp' to manually select a region of the screen.
+    window:
+        Use 'jq' to screenshot the current focused window.
+    monitor:
+        Use 'jq' to screenshot the current focused monitor.
+EOF
+    exit 1
+}
+
+notify_save() {
+    local icon="$1"
+    local file="$2"
+    notify-send -i "$icon" "Screenshot" "Saved as '$file'"
+}
+
+notify_copy() {
+    notify-send -t 3 "Screenshot" "Image copied to the clipboard"
+}
+
+pic_xdg="$(xdg-user-dir PICTURES)"
+pic_dir="${pic_xdg:-HOME}"/screenshots
+clip=0
+swappy=0
+
+[[ $# -le 0 ]] && die
+
+[[ -d "$pic_dir" ]] || mkdir -p "$pic_dir"
+
+while [[ $# -gt 0 ]] && [[ $# -lt 3 ]]; do
+    case $1 in
+        -c|--clipboard)
+            clip=1
+            shift
+            ;;
+        -s|--swappy)
+            swappy=1
+            shift
+            ;;
+        region)
+            filename="$(date +%s)s.png"
+            if [ "$clip" -eq 1 ]; then
+                grim -g "$(slurp)" - | wl-copy
+                notify_copy
+            elif [ "$swappy" -eq 1 ]; then
+                grim -g "$(slurp)" - | swappy -f -
+            else
+                grim -g "$(slurp)" "$pic_dir"/"$filename"
+                notify_save "$pic_dir/$filename" "$filename"
+            fi
+            shift
+            ;;
+        window)
+            filename="$(date +%s)w.png"
+            if [ "$clip" -eq 1 ]; then
+                # TODO: wrap lines
+                grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy
+                notify_copy
+            elif [ "$swappy" -eq 1 ]; then
+                grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | swappy -f -
+            else
+                grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" \
+                    "$pic_dir"/"$filename"
+                notify_save "$pic_dir/$filename" "$filename"
+            fi
+            shift
+            ;;
+        monitor)
+            filename="$(date +%s)m.png"
+            if [ "$clip" -eq 1 ]; then
+                grim -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" - | wl-copy
+            elif [ "$swappy" -eq 1 ]; then
+                grim -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" - | swappy -f -
+            else
+                grim -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" "$pic_dir"/"$filename"
+                notify_save "$pic_dir/$filename" "$filename"
+            fi
+            shift
+            ;;
+        --*|*)
+            die "Unknown option '$1'"
+            shift
+            ;;
+    esac
+done
