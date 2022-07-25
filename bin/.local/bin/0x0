@@ -3,7 +3,7 @@
 # uploads a file to http://0x0.st
 
 die() {
-    echo "${1:-Usage: ${0##*/} file|url}" >&2
+    echo "${1:-Usage: ${0##*/} file|url}"
     exit 1
 }
 
@@ -54,6 +54,7 @@ is_file() {
 
 main() {
     argument="$1"
+    [ -z "$argument"] && die
     is_dir  "$argument"
     is_url  "$argument"
     is_file "$argument"
