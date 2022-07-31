@@ -6,7 +6,7 @@ Wayland setup.
 
 Managed with GNU `stow`.
 
-Clone the repository and symlink programs to the `$HOME` directory. Example:
+Clone the repository and symlink programs to your `$HOME` directory. Example:
 
 ```
 $ stow -t ~ vim tmux bash
@@ -30,15 +30,15 @@ $ stow -t ~ -D vim tmux bash
 |launcher      |`wofi`|
 |panel/bar     |[`waybar`](https://github.com/krypt-n/bar)|
 |notifications |`mako`|
-|file manager  |`nnn` (and `thunar` sometimes)|
+|file manager  |`nnn`|
 |editor        |`nvim`|
 |music player  |`ncmpcpp` (`mpd` client)|
 |multiplexer   |`tmux`|
 |reader        |`zathura`|
-|image viewer  |`none`|
+|image viewer  |`imv`|
 |browser       |`firefox`|
 |colorscheme   |[gruvbox-material](https://github.com/sainnhe/gruvbox-material)|
 
 ##### dependencies:
 
-WIP: Check the [dependencies wiki](https://github.com/cer-0/dots/wiki/Dependencies) page.
+Check the [dependencies wiki](https://github.com/cer-0/dots/wiki/Dependencies) page.
