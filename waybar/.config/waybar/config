@@ -11,13 +11,13 @@
     },
     "mpd": {
         "format": " {stateIcon} {artist} - {title}",
-        "format-disconnected": "  ",
-        "format-stopped": "  ",
+        "format-disconnected": "  ",
+        "format-stopped": "  ",
         "unknown-tag": "N/A",
         "interval": 2,
         "state-icons": {
             "paused": "",
-            "playing": ""
+            "playing": ""
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
@@ -33,8 +33,8 @@
         "format-wifi": " {essid}",
         "format-ethernet": " {ipaddr}",
         "tooltip-format": " {ifname} via {gwaddr}",
-        "format-linked": " {ifname} (No IP)",
-        "format-disconnected": "⚠ No network",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": " No network",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
@@ -54,8 +54,8 @@
     },
     "battery": {
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         "format-alt": "{icon} {time}",
         "format-icons": ["", "", "", "", ""]
     },
@@ -64,7 +64,7 @@
     },
     "clock": {
         "interval": 30,
-        "format": " {:%H:%M    %d %B}",
+        "format": " {:%H:%M    %d %B}",
         "max-lenght": 30,
         "timezones": ["America/Mexico_City", "UTC"],
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
