@@ -34,7 +34,7 @@ notify_copy() {
 }
 
 pic_xdg="$(xdg-user-dir PICTURES)"
-pic_dir="${pic_xdg:-HOME}"/screenshots
+pic_dir="${pic_xdg:-$HOME}"/screenshots
 clip=0
 swappy=0
 
