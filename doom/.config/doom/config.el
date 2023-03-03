@@ -51,3 +51,13 @@
 
 ;; SLIME configuration
 (setq inferior-lisp-program "/usr/bin/sbcl")
+
+;; Syntax highlight in latex with org code blocks
+(require 'ox-latex)
+(add-to-list 'org-latex-packages-alist '("" "minted"))
+(setq org-latex-listings 'minted)
+
+(setq org-latex-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
