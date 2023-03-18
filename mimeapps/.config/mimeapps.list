@@ -6,3 +6,7 @@ image/jpeg=imv-folder.desktop;
 image/gif=imv-folder.desktop;
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
+[Removed Associations]
+image/png=chromium.desktop;
+image/jpeg=chromium.desktop;
+image/gif=chromium.desktop;
