@@ -1,26 +1,26 @@
-#### dotfiles
+# dotfiles
 
-Wayland setup.
+Personal configuration files with "hybrid" mode (laptop/dock) in mind.
 
-##### install
+## install
 
-Managed with GNU `stow`.
-
-Clone the repository and symlink programs to your `$HOME` directory. Example:
-
-```
-$ stow -t ~ vim tmux bash
-```
-
-##### uninstall
-
-Remove the symlinks. Example:
+Managed with GNU `stow`. Clone the repository and symlink the desired
+configurations to your `$HOME` directory. Example:
 
 ```
-$ stow -t ~ -D vim tmux bash
+git clone --depth 1 https://github.com/cer-0/dots.git && cd dots
+stow -t ~ vim tmux bash
 ```
 
-##### stuff i use
+## uninstall
+
+Remove the symlinks of the previously linked files. Example:
+
+```
+stow -t ~ -D vim tmux bash
+```
+
+## list of main software
 
 | :( :( :( :(  | software                          |
 |--------------|-----------------------------------|
@@ -28,10 +28,10 @@ $ stow -t ~ -D vim tmux bash
 |window manager|`sway`|
 |terminal      |`alacritty`|
 |launcher      |`wofi`|
-|panel/bar     |[`waybar`](https://github.com/krypt-n/bar)|
+|bar           |[`waybar`](https://github.com/Alexays/Waybar)|
 |notifications |`mako`|
 |file manager  |`nnn`|
-|editor        |`nvim`|
+|editor        |`nvim`/(doom) `emacs`)|
 |music player  |`ncmpcpp` (`mpd` client)|
 |multiplexer   |`tmux`|
 |reader        |`zathura`|
@@ -39,6 +39,6 @@ $ stow -t ~ -D vim tmux bash
 |browser       |`firefox`|
 |colorscheme   |[gruvbox-material](https://github.com/sainnhe/gruvbox-material)|
 
-##### dependencies:
+### dependencies
 
 Check the [dependencies wiki](https://github.com/cer-0/dots/wiki/Dependencies) page.
