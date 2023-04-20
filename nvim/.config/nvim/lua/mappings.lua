@@ -8,10 +8,10 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- General file management
+map('n', '<leader>fs', ':update<CR>')
 map('n', '<leader>w', ':update<CR>')
 map('n', '<leader>q', ':quit!<CR>')
 map('n', '<leader>x', ':wqall<CR>')
-map('n', '<leader>a', ':wall<CR>')
 
 -- Movement between buffers
 map('n', '<C-h>', '<C-w>h')
@@ -19,7 +19,7 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
--- Move lines with up and down
+-- Move line pressing up and down
 map('n', '<Up>',   ':move-2<CR>', { silent = true })
 map('n', '<Down>', ':move+<CR>',  { silent = true })
 
@@ -49,19 +49,17 @@ map('t', '<C-k>', '<C-\\><C-N><C-w>k')
 map('t', '<C-l>', '<C-\\><C-N><C-w>l')
 
 -- Plugin mappings
--- NvimTree
-map('n', '<leader>nn', ':NvimTreeToggle<CR>')
-map('n', '<leader>nr', ':NvimTreeRefresh<CR>')
-map('n', '<leader>nf', ':NvimTreeFindFileToggle<CR>')
-
 -- Telescope
 map('n', '<leader>ff', ':lua require("telescope.builtin").find_files({hidden=true})<CR>')
 map('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>')
 map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
 map('n', '<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>')
-map('n', '<leader>os', ':lua require("telescope.builtin").spell_suggest()<CR>')
+map('n', '<leader>ss', ':lua require("telescope.builtin").spell_suggest()<CR>')
 
 -- TrueZen
-map('n', '<leader>za', '<cmd>TZAtaraxis<CR>')
-map('n', '<leader>zm', '<cmd>TZMinimalist<CR>')
-map('n', '<leader>zf', '<cmd>TZFocus<CR>')
+map('n', '<leader>tz', '<cmd>TZAtaraxis<CR>')
+map('n', '<leader>tm', '<cmd>TZMinimalist<CR>')
+map('n', '<leader>tZ', '<cmd>TZFocus<CR>')
+
+-- Neogit
+map('n', '<leader>gg', '<cmd>Neogit<CR>')
