@@ -31,7 +31,7 @@ font:
 draw_bold_text_with_bright_colors: false
 
 import:
-  - "~/.config/alacritty/gruvbox-material.yml"
+  - "~/.config/alacritty/colorschemes.yml"
 
 cursor:
   style: Block
