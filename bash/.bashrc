@@ -6,7 +6,13 @@
 [[ $- != *i* ]] && return
 
 # Additional environment variables
-source $HOME/.profile
+. $HOME/.profile
+
+# Bash arguments|commands completion, requires bash-completion
+. /usr/share/bash-completion/bash_completion
+
+# Rust variables
+. "$HOME/.cargo/env"
 
 # Do not add duplicated commands to history
 export HISTCONTROL=ignoredups
@@ -16,9 +22,6 @@ shopt -s autocd
 
 # Auto wrap lines on window resize
 shopt -s checkwinsize
-
-# Bash arguments|commands completion, requires bash-completion
-. /usr/share/bash-completion/bash_completion
 
 # vi mode in the prompt
 # set -o vi
