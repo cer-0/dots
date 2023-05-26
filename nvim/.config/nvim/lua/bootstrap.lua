@@ -26,23 +26,21 @@ local function headless_paq()
   bootstrap_paq {
     "savq/paq-nvim",
     -- List your packages
+    "sainnhe/gruvbox-material",
+    "arcticicestudio/nord-vim",
+    "navarasu/onedark.nvim",
     "hoob3rt/lualine.nvim",
     "nvim-telescope/telescope.nvim",
     "nvim-lua/popup.nvim",
     "nvim-lua/plenary.nvim",
-    "kyazdani42/nvim-tree.lua",
-    "kyazdani42/nvim-web-devicons",
-    "projekt0n/circles.nvim",
     "nvim-treesitter/nvim-treesitter",
     "ahmedkhalf/project.nvim",
     "TimUntersberger/neogit",
     "terrortylor/nvim-comment",
+    "kylechui/nvim-surround",
     "windwp/nvim-autopairs",
     "junegunn/rainbow_parentheses.vim",
     "Pocco81/TrueZen.nvim",
-    "sainnhe/gruvbox-material",
-    "arcticicestudio/nord-vim",
-    "navarasu/onedark.nvim",
   }
 end
 
