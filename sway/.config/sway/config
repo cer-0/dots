@@ -11,15 +11,18 @@ set $down  j
 set $up    k
 set $right l
 
-set $term  alacritty
-set $menu  wofi --show run
+set $term         alacritty
+set $menu         wofi --term=$term --show run
+set $apps_menu    wofi --show drun
+set $file_manager $term -e nnn -C -d
+set $music_player $term -e ncmpcpp
 
 ### Output configuration
 # Background, wall is a symbolic link
 output * bg /home/cer0/pic/wallpaper/wall fill
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-set $laptop "AU Optronics 0x103D Unknown"
+set $laptop   "AU Optronics 0x103D Unknown"
 set $external "Hewlett Packard HP 23er 3CM831162X   "
 
 # Clamshell mode
@@ -28,7 +31,7 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 exec_always /home/cer0/.local/bin/clamshell_sway
 
-output $laptop resolution 1920x1080 position 0,0
+output $laptop   resolution 1920x1080 position 0,0
 output $external resolution 1920x1080 position 1920,0
 
 ### Idle configuration
@@ -61,7 +64,11 @@ input "2:10:TPPS/2_IBM_TrackPoint" {
     pointer_accel 1.0
 }
 
-input "1739:0:Synaptics_TM3276-022" events disabled
+input "1739:0:Synaptics_TM3276-022" {
+    events disabled
+    tap enabled
+    natural_scroll enabled
+}
 
 input "9094:17199:Raydium_Corporation_Raydium_Touch_System" events disabled
 
@@ -74,15 +81,16 @@ bindsym $mod+Return exec $term
 bindsym $mod+q kill
 
 # Start your launcher
-bindsym $mod+d exec $menu
+bindsym $mod+d       exec $menu
+bindsym $mod+Shift+d exec $apps_menu
 
 # File manager
-bindsym $mod+Shift+e exec $term -e nnn -C -d
+bindsym $mod+Shift+e exec $file_manager
 
 # Music player
-bindsym $mod+Shift+m exec $term -e ncmpcpp
+bindsym $mod+Shift+m exec $music_player
 
-# mouse button for dragging.
+# Mouse button for dragging.
 floating_modifier $mod normal
 
 # Reload the configuration file
@@ -186,11 +194,11 @@ exec "systemctl --user import-environment"
 # Adittional bindings
 bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioMicMute     exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym --locked XF86AudioMute        exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+
 
 bindsym $mod+Mod1+Left  exec playerctl -a previous
 bindsym $mod+Mod1+Down  exec playerctl -a play-pause
@@ -203,27 +211,27 @@ bindsym $mod+Ctrl+Up    exec mpc stop
 bindsym $mod+Ctrl+Right exec mpc next
 
 mode "screenshot" {
-    bindsym m exec screenshot monitor
-    bindsym w exec screenshot window
-    bindsym r exec screenshot region
+    bindsym m      exec screenshot monitor
+    bindsym w      exec screenshot window
+    bindsym r      exec screenshot region
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
 bindsym $mod+Print mode "screenshot"
 
 mode "screenshot-copy" {
-    bindsym m exec screenshot -c monitor
-    bindsym w exec screenshot -c window
-    bindsym r exec screenshot -c region
+    bindsym m      exec screenshot -c monitor
+    bindsym w      exec screenshot -c window
+    bindsym r      exec screenshot -c region
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
 bindsym Ctrl+Print mode "screenshot-copy"
 
 mode "screenshot-edit" {
-    bindsym m exec screenshot -s monitor
-    bindsym w exec screenshot -s window
-    bindsym r exec screenshot -s region
+    bindsym m      exec screenshot -s monitor
+    bindsym w      exec screenshot -s window
+    bindsym r      exec screenshot -s region
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
