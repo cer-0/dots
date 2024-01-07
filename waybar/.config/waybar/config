@@ -3,11 +3,16 @@
     "position": "top",
     "height": 26,
     "spacing": 4,
-    "modules-left": ["sway/workspaces", "sway/mode", "mpd"],
-    "modules-center": [""],
+    "modules-left": ["river/tags", "river/window"],
+    "modules-center": ["mpd"],
     "modules-right": ["network", "pulseaudio", "battery", "battery#bat2", "clock"],
-    "sway/window": {
-        "max-length": 50
+    "river/tags": {
+        "tag-labels": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+    },
+    "river/window": {
+        "format": "{}",
+        "max-length": 40,
+        "tooltip": false
     },
     "mpd": {
         "format": " {stateIcon} {artist} - {title}",
