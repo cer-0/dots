@@ -9,7 +9,7 @@ require "paq" {
     "nvim-telescope/telescope.nvim";
     "nvim-lua/popup.nvim";
     "nvim-lua/plenary.nvim";
-    {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"};
+    {"nvim-treesitter/nvim-treesitter", build=":TSUpdate"};
     "ahmedkhalf/project.nvim";
     "TimUntersberger/neogit";
     "terrortylor/nvim-comment";
