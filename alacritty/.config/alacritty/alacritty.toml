@@ -1,26 +1,17 @@
 import = ["~/.config/alacritty/colorschemes.toml"]
-live_config_reload = true
 
 [colors]
 draw_bold_text_with_bright_colors = true
 
-[cursor]
-style = "underline"
+[cursor.style]
+shape = "Block"
+blinking = "On"
 
 [env]
 TERM = "xterm-256color"
 
 [font]
 size = 10
-
-[font.bold]
-style = "Bold"
-
-[font.bold_italic]
-style = "Bold Italic"
-
-[font.italic]
-style = "Italic"
 
 [font.normal]
 family = "JetBrains Mono"
@@ -59,16 +50,6 @@ mods = "Control"
 [[mouse.bindings]]
 action = "PasteSelection"
 mouse = "Middle"
-
-[scrolling]
-history = 1000
-
-[window]
-startup_mode = "Windowed"
-
-[window.dimensions]
-columns = 80
-lines = 24
 
 [window.padding]
 x = 5
