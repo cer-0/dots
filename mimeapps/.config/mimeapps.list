@@ -10,3 +10,6 @@ x-scheme-handler/https=firefox.desktop
 image/png=chromium.desktop;
 image/jpeg=chromium.desktop;
 image/gif=chromium.desktop;
+image/png=brave-browser.desktop;
+image/jpeg=brave-browser.desktop;
+image/gif=brave-browser.desktop;
