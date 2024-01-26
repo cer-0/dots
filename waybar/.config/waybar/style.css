@@ -1,39 +1,3 @@
-/* =============================================================================
- *
- * Waybar configuration
- *
- * Configuration reference:
- * https://github.com/robertjk/dotfiles/blob/master/.config/waybar/style.css
- *
- * =========================================================================== */
-
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
-
-@keyframes blink-warning {
-    70% {
-        color: white;
-    }
-
-    to {
-        color: white;
-        background-color: orange;
-    }
-}
-
-@keyframes blink-critical {
-    70% {
-      color: white;
-    }
-
-    to {
-        color: white;
-        background-color: red;
-    }
-}
-
-
 /* -----------------------------------------------------------------------------
  * Base styles
  * -------------------------------------------------------------------------- */
@@ -50,7 +14,7 @@
 /* The whole bar */
 #waybar {
     background: #282828;
-    color: white;
+    color: #d4be98;
     font-family: JetBrains Mono, monospace;
     font-size: 13px;
 }
@@ -63,7 +27,9 @@
 #mode,
 #network,
 #pulseaudio,
+#river,
 #temperature,
+#mpd,
 #tray {
     padding-left: 10px;
     padding-right: 10px;
@@ -74,67 +40,30 @@
  * Module styles
  * -------------------------------------------------------------------------- */
 
-#battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#tags button {
+    color: #d4be98;
+    padding-left:  5px;
+    padding-right: 5px;
 }
 
-#battery.warning {
-    color: orange;
+#tags button.occupied {
+    color: #3c3836;
 }
 
-#battery.critical {
-    color: red;
+#tags button.focused {
+    color: #7daea3;
+    background: #1d2021;
 }
 
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-#clock {
-    /* No styles */
-}
-
-#cpu {
-    /* No styles */
-}
-
-#cpu.warning {
-    color: orange;
-}
-
-#cpu.critical {
-    color: red;
-}
-
-#memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#memory.warning {
-    color: orange;
-}
-
-#memory.critical {
-    color: red;
-    animation-name: blink-critical;
-    animation-duration: 2s;
+#tags button.urgent {
+    color: #d8a657;
 }
 
 #mode {
-    background: #64727D;
-    border-top: 2px solid white;
+    background: #3c3836;
+    /* border-top: 2px solid white; */
     /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
+    /* padding-bottom: 2px; */
 }
 
 #network {
@@ -150,41 +79,23 @@
 }
 
 #pulseaudio.muted {
-    /* No styles */
+    color: orange;
 }
 
-#temperature {
-    /* No styles */
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.warning {
+    color: orange;
+}
+
+#battery.critical {
+    color: red;
 }
 
 #temperature.critical {
     color: red;
-}
-
-#tray {
-    /* No styles */
-}
-
-#window {
-    /* No styles */
-}
-
-#workspaces button {
-    border-top: 2px solid transparent;
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #888888;
-}
-
-#workspaces button.focused {
-    border-color: #4c7899;
-    color: white;
-    background-color: #285577;
-}
-
-#workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
 }
