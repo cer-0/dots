@@ -3,8 +3,9 @@ layer=overlay
 width=300
 height=110
 border-size=2
-border-color=#88c0d0
-border-radius=5
+border-color=#7daea3
+background-color=#3c3836
+border-radius=0
 icons=1
 max-icon-size=48
 default-timeout=7500
@@ -12,13 +13,13 @@ ignore-timeout=1
 font=JetBrains Mono 10
 
 [urgency=low]
-border-color=#cccccc
+border-color=#32302f
 
 [urgency=normal]
-border-color=#d08770
+border-color=#a9b665
 
 [urgency=high]
-border-color=#bf616a
+border-color=#d8a657
 default-timeout=0
 
 [category=mpd]
