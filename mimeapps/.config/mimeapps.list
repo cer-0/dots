@@ -1,18 +1,20 @@
 [Default Applications]
 text/plain=nvim.desktop;
 application/pdf=org.pwmt.zathura.desktop;
-image/png=imv-folder.desktop;
-image/jpeg=imv-folder.desktop;
-image/jpg=imv-folder.desktop;
-image/gif=imv-folder.desktop;
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
+image/png=imv-dir.desktop;
+image/jpeg=imv-dir.desktop;
+image/gif=imv-dir.desktop;
+image/webp=imv-dir.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/org-protocol=emacs.desktop;
+
 [Removed Associations]
 image/png=chromium.desktop;
-image/jpg=chromium.desktop;
 image/jpeg=chromium.desktop;
 image/gif=chromium.desktop;
+image/webp=chromium.desktop;
 image/png=brave-browser.desktop;
-image/jpg=brave-browser.desktop;
 image/jpeg=brave-browser.desktop;
 image/gif=brave-browser.desktop;
+image/webp=brave-browser.desktop;
