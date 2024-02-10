@@ -5,6 +5,8 @@
 # Dependencies: wofi systemd
 # Kevin's idea, not me.
 
+menu="bemenu"
+
 selectn () {
     case $action in
         Shutdown)
@@ -30,13 +32,13 @@ selectn () {
     esac
 }
 
-action=$(echo -e "Shutdown\nReboot\nSuspend\nHibernate\nTimer\nLogout" | wofi -d -L 5 -i -p ":(")
+action=$(echo -e "Shutdown\nReboot\nSuspend\nHibernate\nTimer\nLogout" | "$menu" -p "☠️")
 
 if [ "$action" != "Timer" ]; then
     selectn 0
 else
-    timer=$(echo -e "5\n15\n30\n60" | wofi -show -dmenu -L 4 -i -p "Minutes:")
-    action=$(echo -e "Shutdown\nReboot\nSuspend\nHibernate" | wofi -show -dmenu -L 4 -i)
+    timer=$(echo -e "5\n15\n30\n60" | "$menu" -p "Minutes:")
+    action=$(echo -e "Shutdown\nReboot\nSuspend\nHibernate" | "$menu" )
     timer+="m"
     selectn $timer
 fi
