@@ -143,8 +143,9 @@ done
 # Set background and border color
 # riverctl background-color 0x32302f
 riverctl spawn 'swaybg -i ~/pic/wallpaper/wall -m fill'
-riverctl border-color-focused 0xd3869b
+riverctl border-color-focused 0x7daea3
 riverctl border-color-unfocused 0x1d2021
+riverctl border-color-urgent 0xd8a657
 
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
@@ -158,7 +159,7 @@ riverctl rule-add -app-id "bar" csd
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-rivertile -view-padding 6 -outer-padding 6 &
+rivertile -view-padding 5 -outer-padding 5 &
 
 # Import XDG environment variables
 riverctl spawn 'systemctl --user import-environment'
