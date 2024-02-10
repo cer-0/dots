@@ -8,7 +8,6 @@ BAT_THEME=ansi           \
 LESSHISTFILE=/dev/null   \
 BEMENU_OPTS='--ignorecase
   --no-touch
-  --wrap
   --line-height 26
   --hp 10
   --fn "JetBrains Mono 11"
