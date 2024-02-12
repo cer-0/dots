@@ -3,8 +3,8 @@ local paq = require("paq")
 require "paq" {
     "savq/paq-nvim";
     "sainnhe/gruvbox-material";
-    "navarasu/onedark.nvim";
-    "arcticicestudio/nord-vim";
+    "sainnhe/everforest";
+    "shaunsingh/nord.nvim";
     "hoob3rt/lualine.nvim";
     "nvim-telescope/telescope.nvim";
     "nvim-lua/popup.nvim";

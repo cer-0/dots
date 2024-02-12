@@ -27,8 +27,8 @@ local function headless_paq()
     "savq/paq-nvim",
     -- List your packages
     "sainnhe/gruvbox-material",
-    "arcticicestudio/nord-vim",
-    "navarasu/onedark.nvim",
+    "sainnhe/everforest";
+    "shaunsingh/nord.nvim",
     "hoob3rt/lualine.nvim",
     "nvim-telescope/telescope.nvim",
     "nvim-lua/popup.nvim",
