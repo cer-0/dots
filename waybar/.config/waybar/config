@@ -4,9 +4,10 @@
     "height": 26,
     "spacing": 4,
     "modules-left": ["river/tags", "river/mode"],
-    "modules-right": ["mpd", "network", "pulseaudio", "battery", "battery#bat2", "clock"],
+    "modules-right": ["mpd", "network", "pulseaudio", "battery", "clock"],
     "river/tags": {
-        "tag-labels": ["", "", "", "", "", "", "", "", "", ""]
+        // "tag-labels": ["", "", "", "", "", "", "", "", "", ""]
+        "tag-labels": ["", "", "", "", "", "", "", "", ""]
     },
     "river/mode": {
         "format": "{}"
@@ -35,37 +36,36 @@
         "format-wifi": " {essid}",
         "format-ethernet": " {ipaddr}",
         "tooltip-format": " {ifname} via {gwaddr}",
-        "format-linked": " {ifname} (No IP)",
+        "format-linked": " {ifname} (No IP)",
         "format-disconnected": " No network",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        "format": "{format_source} {icon} {volume}%",
-        "format-bluetooth": "{format_source} {icon} {volume}%",
-        "format-bluetooth-muted": "{format_source} {icon}  ",
-        "format-muted": "{format_source}  ",
-        "format-source-muted": "",
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
             "headset": "",
-            "phone": "",
-            "default": [""]
+            "default": ["", ""]
         },
-        "on-click": "alacritty -e pulsemixer"
+        "scroll-step": 2,
+        "on-click": "alacritty -e pulsemixer",
     },
     "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-plugged": " {capacity}%",
         "format-alt": "{icon} {time}",
         "format-icons": ["", "", "", "", ""]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
     "clock": {
-        "interval": 30,
+        "interval": 60,
         "format": " {:%H:%M    %d %b}",
         "max-lenght": 30,
         "timezones": ["America/Mexico_City", "UTC"],
