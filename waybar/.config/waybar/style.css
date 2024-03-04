@@ -15,8 +15,8 @@
 #waybar {
     background: #282828;
     color: #d4be98;
-    font-family: JetBrains Mono, monospace;
-    font-size: 13px;
+    font-family: "JetBrains Mono", "Font Awesome 6 Free", monospace;
+    font-size: 12px;
 }
 
 /* Each module */
