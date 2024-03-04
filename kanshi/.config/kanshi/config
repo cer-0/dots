@@ -1,0 +1,23 @@
+profile laptop {
+    output eDP-1 enable scale 1.25
+}
+
+profile dock-external {
+    output eDP-1 disable
+    output "Hewlett Packard HP 23er 3CM831162X   " enable mode 1920x1080
+}
+
+profile dock-extended {
+    output eDP-1 enable scale 1.25
+    output "Hewlett Packard HP 23er 3CM831162X   " enable mode 1920x1080
+}
+
+profile misti-external {
+    output eDP-1 disable
+    output "HP Inc. HX Armada 27 CNK231046L" enable 
+}
+
+profile misti-extended {
+    output eDP-1 enable scale 1.25 position 0,0
+    output "HP Inc. HX Armada 27 CNK231046L" enable position 0,-1440
+}

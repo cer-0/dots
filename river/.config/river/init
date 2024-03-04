@@ -140,6 +140,9 @@ do
     riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
 done
 
+# Configure outputs with kanshi
+riverctl spawn kanshi
+
 # Set background and border color
 # riverctl background-color 0x32302f
 riverctl spawn 'swaybg -i ~/pic/wallpaper/wall -m fill'
@@ -170,10 +173,8 @@ riverctl spawn waybar
 # Disable touch events on laptop display
 riverctl input touch-9094-17199-Raydium_Corporation_Raydium_Touch_System events disabled
 
-# Enable touchpad tap to clik, natural scroll and disable the touchpad
-# riverctl input pointer-1739-0-Synaptics_TM3276-022 tap enabled
-# riverctl input pointer-1739-0-Synaptics_TM3276-022 natural-scroll enabled
-riverctl input pointer-1739-0-Synaptics_TM3276-022 events disabled
+# Disable touchpad
+riverctl input pointer-1739-0-Synaptics_TM3276-022 tap disabled
 
 # Increase pointer acceletarion
 riverctl input pointer-2-10-TPPS/2_IBM_TrackPoint pointer-accel 1.0
