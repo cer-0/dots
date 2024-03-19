@@ -174,7 +174,7 @@ riverctl spawn waybar
 riverctl input touch-9094-17199-Raydium_Corporation_Raydium_Touch_System events disabled
 
 # Disable touchpad
-riverctl input pointer-1739-0-Synaptics_TM3276-022 tap disabled
+riverctl input pointer-1739-0-Synaptics_TM3276-022 events disabled
 
 # Increase pointer acceletarion
 riverctl input pointer-2-10-TPPS/2_IBM_TrackPoint pointer-accel 1.0
