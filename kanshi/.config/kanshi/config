@@ -14,10 +14,10 @@ profile dock-extended {
 
 profile misti-external {
     output eDP-1 disable
-    output "HP Inc. HX Armada 27 CNK231046L" enable 
+    output "HP Inc. HX Armada 27 CNK2291HCT" enable 
 }
 
 profile misti-extended {
     output eDP-1 enable scale 1.25 position 0,0
-    output "HP Inc. HX Armada 27 CNK231046L" enable position 0,-1440
+    output "HP Inc. HX Armada 27 CNK2291HCT" enable position 0,-1440
 }

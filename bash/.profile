@@ -10,7 +10,7 @@ BEMENU_OPTS='--ignorecase
   --no-touch
   --line-height 26
   --hp 10
-  --fn "JetBrains Mono 11"
+  --fn "JetBrains Mono 10"
   --tb #1d2021
   --tf #89b482
   --fb #282828
