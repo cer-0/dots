@@ -1,3 +1,5 @@
+> _**As of March 19, 2024 this repo has migrated to sourcehut**_
+
 # dot(file)s
 
 Personal configuration files.
